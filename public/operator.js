@@ -513,6 +513,21 @@ function playGavel(){
 const SFX={ gavel:playGavel, unsold:playGavel };
 window.toggleOpSound=()=>{ sndOn=!sndOn; try{ localStorage.setItem('ipl_op_snd', sndOn?'1':'0'); }catch(e){} syncSoundBtn(); if(sndOn) playGavel(); };
 function syncSoundBtn(){ const b=$('opSndBtn'); if(b){ b.textContent=sndOn?'🔨 Gavel on':'🔇 Gavel off'; b.className='btn sm '+(sndOn?'gold':'ghost'); } }
+
+// IPL theme song — operator plays it on demand (intro / breaks); click again to stop.
+let _theme=null;
+try{ _theme=new Audio('/sfx/ipl_theme.mp3'); _theme.preload='auto'; _theme.addEventListener('ended',syncThemeBtn); }catch(e){}
+window.toggleTheme=()=>{
+  const willPlay = !_theme || _theme.paused;
+  // Play locally for instant feedback (this click also satisfies autoplay), and
+  // broadcast to every screen (presentation + teams) via the server.
+  try{
+    if(_theme){ if(willPlay){ _theme.currentTime=0; _theme.volume=0.85; _theme.play().catch(()=>{}); } else { _theme.pause(); } }
+  }catch(e){}
+  cmd(willPlay?'playTheme':'stopTheme');
+  syncThemeBtn();
+};
+function syncThemeBtn(){ const b=$('themeBtn'); if(b){ const on=_theme&&!_theme.paused; b.textContent=on?'⏹ Stop theme':'🎵 Theme'; b.className='btn sm '+(on?'green':'ghost'); } }
 function beep(){ try{ _actx=_actx||new (window.AudioContext||window.webkitAudioContext)(); if(_actx.state==='suspended')_actx.resume(); const o=_actx.createOscillator(),g=_actx.createGain(); o.frequency.value=880; o.connect(g); g.connect(_actx.destination); g.gain.setValueAtTime(0.0001,_actx.currentTime); g.gain.exponentialRampToValueAtTime(0.25,_actx.currentTime+0.01); g.gain.exponentialRampToValueAtTime(0.0001,_actx.currentTime+0.35); o.start(); o.stop(_actx.currentTime+0.36);}catch(e){} }
 function clearTimeUp(){ const s=$('soldBtn'),u=$('unsoldBtn'),m=$('timerMsg'),el=$('timerNum'); if(el)el.classList.remove('timeup'); if(m)m.style.display='none'; if(s)s.classList.remove('pulse'); if(u)u.classList.remove('pulse'); wasTimeUp=false; }
 setInterval(()=>{ const el=$('timerNum'); if(!el)return;

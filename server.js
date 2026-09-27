@@ -317,6 +317,8 @@ const server = http.createServer(async (req, res) => {
       if (!body || !body.name) return sendJSON(res, 400, { ok: false, error: 'Bad request' });
       if (body.name === 'startTimer') { engine.startTimer(); return sendJSON(res, 200, { ok: true }); }
       if (body.name === 'stopTimer') { engine.stopTimer(); return sendJSON(res, 200, { ok: true }); }
+      if (body.name === 'playTheme') { engine.setTheme(true); return sendJSON(res, 200, { ok: true }); }
+      if (body.name === 'stopTheme') { engine.setTheme(false); return sendJSON(res, 200, { ok: true }); }
       const result = engine.command(body.name, body.payload || {}, { actor: 'operator' });
       if (!result.ok) return sendJSON(res, 409, { ok: false, error: result.error });
       // Bids are the high-frequency hot path: state is applied + broadcast synchronously

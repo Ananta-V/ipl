@@ -265,6 +265,7 @@ try{ _themeEl=new Audio('/sfx/ipl_theme.mp3'); _themeEl.preload='auto'; }catch(e
 function playClip(el,vol){ if(!sndOn||!el)return; try{ const a=el.cloneNode(); a.volume=vol==null?0.9:vol; a.play().catch(()=>{}); }catch(e){ try{ el.currentTime=0; el.play().catch(()=>{}); }catch(_){} } }
 function gavel(){ playClip(_gavelEl,0.9); }
 function playTheme(){ if(!sndOn||!_themeEl)return; try{ _themeEl.currentTime=0; _themeEl.volume=0.85; _themeEl.play().catch(()=>{}); }catch(e){} }
+function stopTheme(){ try{ if(_themeEl) _themeEl.pause(); }catch(e){} }
 const SFX={
   bid(){ if(!sndOn||!AC)return; tone(880,0,0.07,'triangle',0.22); tone(1320,0.045,0.11,'triangle',0.18); },
   sold(){ gavel(); },                                   // real gavel bang
@@ -281,7 +282,7 @@ window.toggleSound=()=>{
   if(sndOn) SFX.bid();
 };
 
-let _prevPhase=null;
+let _prevPhase=null, _themeAt=0;
 function render(s){
   snap=s;
   const ph=s.phase;
@@ -289,6 +290,8 @@ function render(s){
   // not on a reconnect that loads an already-complete auction.
   if(_prevPhase!==null && _prevPhase!=='complete' && ph==='complete') SFX.theme();
   _prevPhase=ph;
+  // Operator-driven theme song: play/stop on the shared signal from the server.
+  if(s.theme && s.theme.at && s.theme.at!==_themeAt){ _themeAt=s.theme.at; if(s.theme.playing) playTheme(); else stopTheme(); }
   $('phase').className='pill '+ph;
   $('phaseText').textContent={setup:'Setup',live:'Live',paused:'Paused',complete:'Complete'}[ph]||ph;
   { let el=document.getElementById('resultsCta');

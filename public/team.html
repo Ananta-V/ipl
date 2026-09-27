@@ -7,7 +7,10 @@
 <link rel="stylesheet" href="app.css">
 <style>
   body{padding-bottom:112px}
-  .wrap{max-width:760px;margin:0 auto;padding:0 14px}
+  /* Bottom clearance lives on the content (body is height:100%, so its own
+     padding-bottom can't reserve scroll space) — keeps the squad's last rows
+     from hiding behind the fixed BID bar. */
+  .wrap{max-width:760px;margin:0 auto;padding:0 14px 132px}
   /* header */
   .thead{position:sticky;top:0;z-index:15;display:flex;align-items:center;justify-content:space-between;gap:10px;
     padding:12px 14px;background:rgba(10,14,26,.9);backdrop-filter:blur(8px);border-bottom:1px solid var(--line)}
@@ -197,6 +200,16 @@ const $=id=>document.getElementById(id);
 // Safe wrappers — localStorage throws in private mode / when storage is blocked.
 const LS={get(k){try{return localStorage.getItem(k)}catch(e){return null}},set(k,v){try{localStorage.setItem(k,v)}catch(e){}},del(k){try{localStorage.removeItem(k)}catch(e){}}};
 
+/* ---------- audio: gavel on SOLD/UNSOLD + operator-driven IPL theme ---------- */
+// Autoplay needs a gesture — captains tap to join/bid, which unlocks playback.
+let _gavelEl=null,_themeEl=null,_audioReady=false,_themeAt=0;
+try{ _gavelEl=new Audio('/sfx/gavel.mp3'); _gavelEl.preload='auto'; }catch(e){}
+try{ _themeEl=new Audio('/sfx/ipl_theme.mp3'); _themeEl.preload='auto'; }catch(e){}
+function unlockAudio(){ if(_audioReady)return; _audioReady=true; if(!_themeEl)return; try{ _themeEl.muted=true; const p=_themeEl.play(); if(p&&p.then)p.then(()=>{_themeEl.pause();_themeEl.currentTime=0;_themeEl.muted=false;}).catch(()=>{_themeEl.muted=false;}); }catch(e){try{_themeEl.muted=false;}catch(_){}}}
+window.addEventListener('pointerdown',unlockAudio,{once:true});
+function playGavel(){ if(!_gavelEl)return; try{ const a=_gavelEl.cloneNode(); a.volume=0.9; a.play().catch(()=>{}); }catch(e){ try{_gavelEl.currentTime=0;_gavelEl.play().catch(()=>{});}catch(_){} } }
+function themeSignal(th){ if(!th||!th.at||th.at===_themeAt)return; _themeAt=th.at; if(!_themeEl)return; try{ if(th.playing){ _themeEl.currentTime=0; _themeEl.volume=0.85; _themeEl.play().catch(()=>{}); } else { _themeEl.pause(); } }catch(e){} }
+
 /* ---------- multi-room session ---------- */
 const TKEY='ipl_team_'+Bus.ROOM, IDKEY='ipl_teamid_'+Bus.ROOM;
 let myTeam=null, token=null, snap=null, cats=null;
@@ -223,6 +236,7 @@ function render(s){
   const t=s.teams.find(x=>x.teamId===myTeam);
   if(!t){ toJoin(); return; }
   tick(); checkResult(s);            // always: timer countdown + SOLD/UNSOLD splash stay live
+  themeSignal(s.theme);              // operator-driven IPL theme, broadcast to every screen
   if(s.rev===_lastRev && s.phase===_lastPhase) return; // skip heavy rebuild on unchanged ticks
   _lastRev=s.rev; _lastPhase=s.phase;
   $('thead').style.display=''; $('app').style.display=''; $('bidbar').style.display='';
@@ -400,6 +414,7 @@ function checkResult(s){
   const r=s.lastResult; if(!r) return;
   if(r.ts===lastResTs) return;
   const fresh=(Date.now()-r.ts)<8000; lastResTs=r.ts; if(!fresh) return;
+  if(r.kind==='sold'||r.kind==='unsold') playGavel();   // gavel bang on the team screen too
   const col=r.kind==='sold'?'#2ec46a':(r.kind==='unsold'?'#e63946':'#f4c430');
   const stamp=$('sp-stamp'); stamp.className='stamp '+r.kind;
   stamp.textContent=r.kind==='sold'?'SOLD':(r.kind==='unsold'?'UNSOLD':'SKIPPED');
