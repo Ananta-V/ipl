@@ -29,7 +29,7 @@
     background:conic-gradient(var(--gold) calc(var(--p)*1%),#1a2344 0)}
   .ring::before{content:"";position:absolute;inset:7px;border-radius:50%;background:var(--bg2)}
   .ring b{position:relative;font-family:var(--f-display);font-size:26px}
-  .halo{position:relative;display:grid;place-items:center;flex:none;width:clamp(128px,38vw,180px);height:clamp(128px,38vw,180px);z-index:1}
+  .halo{position:relative;display:grid;place-items:center;flex:none;width:clamp(180px,54vw,260px);height:clamp(180px,54vw,260px);z-index:1}
   .halo .hring{position:absolute;border-radius:50%;pointer-events:none}
   .halo .r1{inset:0;border:2px dashed rgba(90,210,255,.55);box-shadow:0 0 20px rgba(90,210,255,.22),inset 0 0 20px rgba(90,210,255,.15);animation:spin 18s linear infinite}
   .halo .r2{inset:8%;border:2px dotted rgba(245,197,66,.6);animation:spin 12s linear infinite reverse}
@@ -37,7 +37,7 @@
     background:conic-gradient(from 0deg,transparent 0 55deg,rgba(90,210,255,.65) 75deg,transparent 95deg 235deg,rgba(245,197,66,.65) 255deg,transparent 275deg);
     -webkit-mask:radial-gradient(closest-side,transparent 79%,#000 81%);mask:radial-gradient(closest-side,transparent 79%,#000 81%)}
   @keyframes spin{to{transform:rotate(360deg)}}
-  .pphoto{width:66%;height:66%;border-radius:50%;flex:none;display:grid;place-items:center;overflow:hidden;position:relative;z-index:2;
+  .pphoto{width:76%;height:76%;border-radius:50%;flex:none;display:grid;place-items:center;overflow:hidden;position:relative;z-index:2;
     background:linear-gradient(160deg,#12203f,#0a1020);
     box-shadow:0 0 0 3px rgba(11,17,32,.9),0 0 0 5px rgba(245,197,66,.55),0 0 34px rgba(90,210,255,.35),0 14px 40px rgba(0,0,0,.55)}
   .pphoto img{width:100%;height:100%;object-fit:cover;border-radius:50%}
@@ -106,7 +106,7 @@
     text-shadow:0 0 40px currentColor;transform:rotate(-5deg);border:6px solid currentColor;border-radius:16px;padding:.04em .3em;animation:stamp .5s cubic-bezier(.2,1.4,.4,1)}
   .soldsplash .stamp.unsold{color:var(--red)} .soldsplash .stamp.skipped{color:var(--gold)}
   @keyframes stamp{0%{transform:rotate(-5deg) scale(1.6);opacity:0}60%{transform:rotate(-5deg) scale(.94)}100%{transform:rotate(-5deg) scale(1);opacity:1}}
-  .soldsplash #sp-photo{width:min(20vh,150px);height:min(20vh,150px);border-radius:50%;overflow:hidden;display:grid;place-items:center;
+  .soldsplash #sp-photo{width:min(27vh,210px);height:min(27vh,210px);border-radius:50%;overflow:hidden;display:grid;place-items:center;
     box-shadow:0 0 0 4px rgba(11,17,32,.9),0 0 0 6px rgba(245,197,66,.6),0 0 40px rgba(90,210,255,.3)}
   .soldsplash #sp-photo img{width:100%;height:100%;object-fit:cover}
   .soldsplash .sp-name{font-family:var(--f-head);font-weight:700;font-size:min(7vw,6vh);line-height:1;text-transform:uppercase}
@@ -164,9 +164,9 @@
 
   <!-- SQUAD -->
   <div class="sec">
-    <div class="sechd">Your squad (<span id="squadn">0</span>)</div>
+    <div class="sechd">Your squad (<span id="squadn">0</span>)<span id="squadspend" class="mut" style="float:right;font-weight:800"></span></div>
     <div style="overflow:auto">
-      <table><thead><tr><th>#</th><th>Player</th><th>Role</th><th></th><th style="text-align:right">Price</th></tr></thead>
+      <table><thead><tr><th></th><th>Player</th><th>Role</th><th></th><th style="text-align:right">Price</th></tr></thead>
       <tbody id="squad"><tr><td colspan="5" class="dim">No players yet.</td></tr></tbody></table>
     </div>
   </div>
@@ -255,8 +255,9 @@ function renderHero(s){
     const catColor='#'+((p.cat&&cats&&cats[p.cat])?cats[p.cat].c:'888');
     const overseas=p.country&&p.country!=='India';
     const meta=[`<span class="tag" style="background:${catColor}22;color:${catColor}">${Bus.esc(p.role||'')}</span>`];
-    if(p.country) meta.push(`<span class="tag" style="background:#20305f;color:#bcd">${Bus.esc(p.country)}</span>`);
-    if(overseas) meta.push(`<span class="tag" style="background:rgba(77,141,255,.18);color:#85b0ff">Overseas</span>`);
+    // One origin pill: a real nation if we have it, else Indian/Overseas.
+    if(overseas) meta.push(`<span class="tag" style="background:rgba(77,141,255,.18);color:#85b0ff">${p.country==='Overseas'?'Overseas':Bus.esc(p.country)}</span>`);
+    else if(p.country) meta.push(`<span class="tag" style="background:#20305f;color:#bcd">${p.country==='India'?'Indian':Bus.esc(p.country)}</span>`);
     $('pmeta').innerHTML=meta.join('');
     $('lastside').innerHTML=(p.star&&p.star.team)?`Last IPL side · <b>${Bus.esc(p.star.team)}</b>`:'';
     $('baseVal').textContent=Bus.fmtL(p.base);
@@ -313,7 +314,13 @@ function renderUpNext(s){ /* hidden on team view */ }
 function renderSquad(t){
   const sq=t.squad||[];
   $('squadn').textContent=sq.length;
-  $('squad').innerHTML=sq.length?sq.map((p,i)=>`<tr><td class="dim">${i+1}</td><td>${Bus.esc(p.name)}</td>
+  const spent=sq.reduce((a,p)=>a+(p.priceL||0),0);
+  $('squadspend').textContent=sq.length?('spent '+Bus.fmtL(spent)):'';
+  const face=(p)=>p.photo
+    ? `<img src="${p.photo}" alt="" style="width:34px;height:34px;border-radius:50%;object-fit:cover;background:#12203f" onerror="this.replaceWith(Object.assign(document.createElement('span'),{textContent:'🏏',style:'display:inline-grid;place-items:center;width:34px;height:34px;border-radius:50%;background:#12203f;font-size:16px'}))">`
+    : `<span style="display:inline-grid;place-items:center;width:34px;height:34px;border-radius:50%;background:#12203f;font-size:16px">🏏</span>`;
+  $('squad').innerHTML=sq.length?sq.map((p)=>`<tr><td style="width:42px">${face(p)}</td>
+    <td><b>${Bus.esc(p.name)}</b></td>
     <td class="mut">${Bus.esc(p.role||'')}</td><td>${p.overseas?'<span class="tag" style="background:#20305f;color:#7aa9ff">OS</span>':''}</td>
     <td style="text-align:right" class="mono">${Bus.fmtL(p.priceL)}</td></tr>`).join('')
     :'<tr><td colspan="5" class="dim">No players yet.</td></tr>';
