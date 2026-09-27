@@ -306,8 +306,9 @@ function render(s){
     const overseas=p.country && p.country!=='India';
     const meta=[];
     meta.push(`<span class="tag" style="background:${catColor}22;color:${catColor}">${roleLabel(p)}</span>`);
-    if(p.country) meta.push(`<span class="tag" style="background:#20305f;color:#bcd">${Bus.esc(p.country)}</span>`);
-    if(overseas) meta.push(`<span class="tag" style="background:rgba(77,141,255,.18);color:#85b0ff">Overseas</span>`);
+    // One origin pill: a real nation name if we have it, else Indian/Overseas.
+    if(overseas) meta.push(`<span class="tag" style="background:rgba(77,141,255,.18);color:#85b0ff">${p.country==='Overseas'?'Overseas':Bus.esc(p.country)}</span>`);
+    else if(p.country) meta.push(`<span class="tag" style="background:#20305f;color:#bcd">${p.country==='India'?'Indian':Bus.esc(p.country)}</span>`);
     $('pmeta').innerHTML=meta.join('');
     $('lastside').innerHTML=(p.star&&p.star.team)?`Last IPL side · <b>${Bus.esc(p.star.team)}</b>`:'';
     setPhoto(p, catColor);

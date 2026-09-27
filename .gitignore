@@ -10,6 +10,9 @@ data/events.log
 # per-room local storage (when running file-backed):
 data/rooms/
 node_modules/
+# raw source dataset (xlsx + source photos) — large inputs; the BUILT master in
+# data/players.json + data/photos is what the app serves and what we version.
+ipl data/
 *.bak
 *.tmp
 .DS_Store
