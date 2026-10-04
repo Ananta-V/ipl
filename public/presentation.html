@@ -7,7 +7,11 @@
 <link rel="stylesheet" href="app.css">
 <style>
   body{overflow:hidden}
-  .stage{height:100vh;display:grid;grid-template-rows:auto 1fr auto auto;gap:0}
+  .stage{height:100vh;display:grid;grid-template-rows:1fr auto;gap:0}
+  /* floating stats HUD (replaces the old top bar) */
+  .hud{position:absolute;top:10px;left:16px;z-index:4;display:flex;align-items:center;gap:10px;flex-wrap:wrap;max-width:calc(100% - 180px)}
+  .hud .hround{font-family:var(--f-head);font-weight:800;font-size:12px;letter-spacing:1.5px;text-transform:uppercase;color:var(--gold)}
+  .hud #progress{font-size:13px;background:var(--panel);border:1px solid var(--line2);border-radius:8px;padding:5px 10px}
   /* coming-up ticker */
   .ticker{display:flex;align-items:center;gap:0;border-top:1px solid var(--line);background:var(--bg2);overflow:hidden}
   .ticker .lead{flex:none;display:flex;align-items:center;gap:8px;padding:10px 18px;
@@ -65,12 +69,12 @@
   .cornerTimer .ring b{font-size:clamp(28px,4.4vh,42px)}
   .cornerTimer .ctlbl{font-family:var(--f-head);font-size:11px;letter-spacing:1px;text-transform:uppercase;color:var(--mut);margin-top:2px}
   .bcast{display:flex;flex-direction:column;align-items:center;width:min(1080px,94vw)}
-  .halo.big{width:clamp(210px,31vh,360px);height:clamp(210px,31vh,360px);margin-bottom:clamp(-54px,-5.5vh,-34px);z-index:3}
+  .halo.big{width:clamp(280px,46vh,560px);height:clamp(280px,46vh,560px);margin-bottom:clamp(-80px,-8vh,-44px);z-index:3}
   .bcbar{display:grid;grid-template-columns:1fr 1.6fr 1fr;width:100%;border-radius:14px;overflow:hidden;
     border:1px solid var(--line2);background:var(--panel);
     box-shadow:0 12px 40px rgba(0,0,0,.65),inset 0 1px 0 rgba(255,255,255,.04)}
   .bcpanel{padding:clamp(14px,2vh,22px) clamp(12px,1.5vw,24px);text-align:center;position:relative;min-width:0}
-  .bcpanel.center{padding-top:clamp(50px,6.5vh,72px);background:rgba(245,197,66,.04);
+  .bcpanel.center{padding-top:clamp(60px,8.5vh,100px);background:rgba(245,197,66,.04);
     border-left:1px solid rgba(245,197,66,.18);border-right:1px solid rgba(245,197,66,.18)}
   .bcpanel.right{background:rgba(245,197,66,.06)}
   .bck{font-family:var(--f-head);font-size:clamp(11px,1.15vw,15px);letter-spacing:2px;text-transform:uppercase;color:var(--mut)}
@@ -160,17 +164,14 @@
 </head>
 <body>
 <div class="stage">
-  <div class="top">
-    <div class="brand"><div class="logo">IPL</div><div><small>Live Auction · 2026</small>
-      <div id="round" style="font-weight:800">Main Round</div></div></div>
-    <div class="row center" style="gap:16px">
-      <button id="sndBtn" class="btn sm ghost" onclick="toggleSound()">🔇 Sound off</button>
-      <div id="progress" class="mut" style="font-weight:700"></div>
-      <span id="phase" class="pill setup"><span class="dot"></span><span id="phaseText">Setup</span></span>
-    </div>
-  </div>
 
   <div class="mid" id="mid">
+    <div class="hud">
+      <span id="round" class="hround">Main Round</span>
+      <div id="progress" class="mut" style="font-weight:700"></div>
+      <span id="phase" class="pill setup"><span class="dot"></span><span id="phaseText">Setup</span></span>
+      <button id="sndBtn" class="btn sm ghost" onclick="toggleSound()">🔇 Sound off</button>
+    </div>
     <div class="cornerTimer"><div class="ring" id="ring"><b id="ringnum">—</b></div><div class="ctlbl">on the clock</div></div>
     <div class="bcast">
       <div class="halo big">
@@ -199,11 +200,6 @@
     </div>
   </div>
 
-  <div class="ticker" id="ticker">
-    <div class="lead">▸ Coming up</div>
-    <div class="track"><div class="move" id="tickerMove"></div></div>
-  </div>
-
   <div class="teams" id="teams"></div>
 </div>
 
@@ -218,8 +214,6 @@
     <div class="sp-sub" id="sp-sub"></div>
   </div>
 </div>
-
-<div class="roomtag" id="roomtag" style="display:none">Room <b id="roomtagCode"></b></div>
 
 <script src="bus.js"></script>
 <script>
@@ -299,15 +293,12 @@ function render(s){
     $('baseVal').textContent=Bus.fmtL(p.base);
     const overseas=p.country && p.country!=='India';
     const meta=[];
-    if(p.series!=null && p.lot!=null) meta.push(`<span class="tag" style="background:#272727;color:#f5c542;font-weight:700">Series ${p.series} · Lot ${p.lot}</span>`);
-    if(p.tier) meta.push(`<span class="tag" style="background:#272727;color:#f0f0f0;font-weight:700">${Bus.esc(p.tier)}</span>`);
     meta.push(`<span class="tag" style="background:${catColor}22;color:${catColor}">${roleLabel(p)}</span>`);
     // One origin pill: a real nation name if we have it, else Indian/Overseas.
     if(overseas) meta.push(`<span class="tag" style="background:rgba(245,197,66,.14);color:#f0f0f0">${p.country==='Overseas'?'Overseas':Bus.esc(p.country)}</span>`);
     else if(p.country) meta.push(`<span class="tag" style="background:#272727;color:#f0f0f0">${p.country==='India'?'Indian':Bus.esc(p.country)}</span>`);
-    if(p.valuePoints!=null) meta.push(`<span class="tag" style="background:rgba(245,197,66,.18);color:#f5c542;font-weight:700">${p.valuePoints} PTS</span>`);
     $('pmeta').innerHTML=meta.join('');
-    $('lastside').innerHTML=(p.teamRef ? `Ref: <b>${Bus.esc(p.teamRef)}</b>` : (p.star&&p.star.team ? `Last IPL side · <b>${Bus.esc(p.star.team)}</b>` : ''));
+    $('lastside').innerHTML=(p.star&&p.star.team ? `Last IPL side · <b>${Bus.esc(p.star.team)}</b>` : '');
     setPhoto(p, catColor);
     // stats strip — real career stats when provided in the data, else player attributes
     const catLbl=(p.cat&&window.__cats&&window.__cats[p.cat])?window.__cats[p.cat].label:'';
@@ -326,10 +317,6 @@ function render(s){
       if(p.series!=null) cells.push(['SERIES', String(p.series)]);
       if(p.lot!=null) cells.push(['LOT', String(p.lot)]);
       if(p.tier) cells.push(['TIER', p.tier]);
-      if(p.valuePoints!=null) cells.push(['POINTS', `${p.valuePoints} / 20`]);
-      if(p.teamRef) cells.push(['FRANCHISE', p.teamRef]);
-      cells.push(['ROLE', p.role||'—']);
-      cells.push(['STATUS', p.cu||'—']);
     }
     $('statStrip').innerHTML=cells.map(c=>`<div class="cell"><span class="k">${Bus.esc(c[0])}</span><span class="v">${Bus.esc(c[1])}</span></div>`).join('');
     const hl=(p.star&&p.star.hi)?p.star.hi:[];
@@ -355,22 +342,12 @@ function render(s){
   }
 
   renderTeams(s);
-  renderTicker(s);
   tick();
   checkResult(s);
 }
 
 let prevBid=null;
 function bumpBid(v){ if(v!=null && v!==prevBid){ const el=$('bidamt'); el.classList.add('bump'); setTimeout(()=>el.classList.remove('bump'),200); SFX.bid(); } prevBid=v; }
-
-function renderTicker(s){
-  const q=s.queuePreview||[];
-  const move=$('tickerMove');
-  if(!q.length){ move.innerHTML=`<span class="item"><b>${s.phase==='complete'?'Auction complete — thank you!':'No more players queued'}</b></span>`; return; }
-  const html=q.map(p=>`<span class="item"><b>${Bus.esc(p.name)}</b> <span class="r">${Bus.esc(p.role||'')}</span> <span class="b">${Bus.fmtL(p.base)}</span></span>`).join('');
-  // duplicate so the marquee loops seamlessly
-  move.innerHTML=html+html;
-}
 
 // Show a full-screen moment (SOLD / UNSOLD / SKIPPED) when a player is resolved,
 // then auto-return to the auction view.
@@ -478,7 +455,6 @@ if(!Bus.ROOM){
     +'<p>Add <code>?room=CODE</code> to the address to view a live auction.</p>'
     +'<a href="index.html">← Back to auctions</a></div></div>';
 } else {
-  $('roomtag').style.display=''; $('roomtagCode').textContent=Bus.ROOM;
   // load category colors (global config)
   Bus.getJSON('/api/players').then(d=>{window.__cats=d.cats;if(snap)render(snap);}).catch(()=>{});
   Bus.connect(render, on=>Bus.connBadge(on), { role:'screen' });
