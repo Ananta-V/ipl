@@ -7,9 +7,14 @@
    "country": "Overseas",
    "role": "BATTER",
    "cu": "",
-   "base": 200,
+   "base": 150,
    "set": "Marquee",
-   "cat": "M"
+   "cat": "M",
+   "series": 3,
+   "lot": 4,
+   "tier": "PREMIUM",
+   "teamRef": "Lucknow",
+   "valuePoints": 16
   },
   {
    "sr": 2,
@@ -18,9 +23,14 @@
    "country": "Overseas",
    "role": "BATTER",
    "cu": "",
-   "base": 200,
+   "base": 150,
    "set": "Marquee",
-   "cat": "M"
+   "cat": "M",
+   "series": 6,
+   "lot": 10,
+   "tier": "PREMIUM",
+   "teamRef": "Delhi",
+   "valuePoints": 16
   },
   {
    "sr": 3,
@@ -29,9 +39,14 @@
    "country": "India",
    "role": "BATTER",
    "cu": "",
-   "base": 200,
+   "base": 150,
    "set": "Marquee",
-   "cat": "M"
+   "cat": "M",
+   "series": 14,
+   "lot": 8,
+   "tier": "PREMIUM",
+   "teamRef": "Bengaluru",
+   "valuePoints": 16
   },
   {
    "sr": 4,
@@ -40,9 +55,14 @@
    "country": "India",
    "role": "BATTER",
    "cu": "",
-   "base": 200,
+   "base": 100,
    "set": "Marquee",
-   "cat": "M"
+   "cat": "M",
+   "series": 5,
+   "lot": 11,
+   "tier": "PREMIUM",
+   "teamRef": "Kolkata",
+   "valuePoints": 15
   },
   {
    "sr": 5,
@@ -53,7 +73,12 @@
    "cu": "",
    "base": 200,
    "set": "Marquee",
-   "cat": "M"
+   "cat": "M",
+   "series": 12,
+   "lot": 14,
+   "tier": "ICON",
+   "teamRef": "Mumbai",
+   "valuePoints": 19
   },
   {
    "sr": 6,
@@ -64,7 +89,12 @@
    "cu": "",
    "base": 200,
    "set": "Marquee",
-   "cat": "M"
+   "cat": "M",
+   "series": 4,
+   "lot": 5,
+   "tier": "ELITE",
+   "teamRef": "Chennai",
+   "valuePoints": 18
   },
   {
    "sr": 7,
@@ -73,9 +103,14 @@
    "country": "India",
    "role": "BATTER",
    "cu": "",
-   "base": 200,
+   "base": 150,
    "set": "Marquee",
-   "cat": "M"
+   "cat": "M",
+   "series": 5,
+   "lot": 1,
+   "tier": "ELITE",
+   "teamRef": "Gujarat",
+   "valuePoints": 17
   },
   {
    "sr": 8,
@@ -84,9 +119,14 @@
    "country": "Overseas",
    "role": "BATTER",
    "cu": "",
-   "base": 200,
+   "base": 100,
    "set": "Marquee",
-   "cat": "M"
+   "cat": "M",
+   "series": 10,
+   "lot": 5,
+   "tier": "PREMIUM",
+   "teamRef": "Rajasthan",
+   "valuePoints": 15
   },
   {
    "sr": 9,
@@ -95,9 +135,14 @@
    "country": "India",
    "role": "BATTER",
    "cu": "",
-   "base": 200,
+   "base": 150,
    "set": "Marquee",
-   "cat": "M"
+   "cat": "M",
+   "series": 13,
+   "lot": 10,
+   "tier": "ELITE",
+   "teamRef": "Punjab",
+   "valuePoints": 17
   },
   {
    "sr": 10,
@@ -108,7 +153,12 @@
    "cu": "",
    "base": 200,
    "set": "Marquee",
-   "cat": "M"
+   "cat": "M",
+   "series": 2,
+   "lot": 14,
+   "tier": "ELITE",
+   "teamRef": "Gujarat",
+   "valuePoints": 18
   },
   {
    "sr": 11,
@@ -119,7 +169,12 @@
    "cu": "",
    "base": 200,
    "set": "Marquee",
-   "cat": "M"
+   "cat": "M",
+   "series": 8,
+   "lot": 4,
+   "tier": "ICON",
+   "teamRef": "Mumbai",
+   "valuePoints": 19
   },
   {
    "sr": 12,
@@ -128,9 +183,14 @@
    "country": "India",
    "role": "BATTER",
    "cu": "",
-   "base": 200,
+   "base": 150,
    "set": "Marquee",
-   "cat": "M"
+   "cat": "M",
+   "series": 2,
+   "lot": 12,
+   "tier": "PREMIUM",
+   "teamRef": "Mumbai",
+   "valuePoints": 16
   },
   {
    "sr": 13,
@@ -139,9 +199,14 @@
    "country": "Overseas",
    "role": "BATTER",
    "cu": "",
-   "base": 200,
+   "base": 100,
    "set": "Marquee",
-   "cat": "M"
+   "cat": "M",
+   "series": 6,
+   "lot": 3,
+   "tier": "PREMIUM",
+   "teamRef": "Bengaluru",
+   "valuePoints": 14
   },
   {
    "sr": 14,
@@ -152,7 +217,12 @@
    "cu": "",
    "base": 200,
    "set": "Marquee",
-   "cat": "M"
+   "cat": "M",
+   "series": 11,
+   "lot": 10,
+   "tier": "ELITE",
+   "teamRef": "Hyderabad",
+   "valuePoints": 18
   },
   {
    "sr": 15,
@@ -163,7 +233,12 @@
    "cu": "",
    "base": 200,
    "set": "Marquee",
-   "cat": "M"
+   "cat": "M",
+   "series": 10,
+   "lot": 4,
+   "tier": "ICON",
+   "teamRef": "Bengaluru",
+   "valuePoints": 20
   },
   {
    "sr": 16,
@@ -174,7 +249,12 @@
    "cu": "",
    "base": 200,
    "set": "Marquee",
-   "cat": "M"
+   "cat": "M",
+   "series": 9,
+   "lot": 11,
+   "tier": "ELITE",
+   "teamRef": "Rajasthan",
+   "valuePoints": 18
   },
   {
    "sr": 17,
@@ -183,9 +263,14 @@
    "country": "India",
    "role": "BATTER",
    "cu": "",
-   "base": 150,
+   "base": 75,
    "set": "Marquee",
-   "cat": "M"
+   "cat": "M",
+   "series": 10,
+   "lot": 9,
+   "tier": "VALUE",
+   "teamRef": "Kolkata",
+   "valuePoints": 12
   },
   {
    "sr": 18,
@@ -194,9 +279,14 @@
    "country": "India",
    "role": "BATTER",
    "cu": "",
-   "base": 150,
+   "base": 75,
    "set": "Marquee",
-   "cat": "M"
+   "cat": "M",
+   "series": 15,
+   "lot": 4,
+   "tier": "VALUE",
+   "teamRef": "Bengaluru",
+   "valuePoints": 12
   },
   {
    "sr": 19,
@@ -205,9 +295,14 @@
    "country": "Overseas",
    "role": "BATTER",
    "cu": "",
-   "base": 150,
+   "base": 75,
    "set": "Marquee",
-   "cat": "M"
+   "cat": "M",
+   "series": 2,
+   "lot": 7,
+   "tier": "VALUE",
+   "teamRef": "Chennai",
+   "valuePoints": 13
   },
   {
    "sr": 20,
@@ -216,9 +311,14 @@
    "country": "Overseas",
    "role": "BATTER",
    "cu": "",
-   "base": 150,
+   "base": 100,
    "set": "Marquee",
-   "cat": "M"
+   "cat": "M",
+   "series": 15,
+   "lot": 8,
+   "tier": "PREMIUM",
+   "teamRef": "Kolkata",
+   "valuePoints": 14
   },
   {
    "sr": 21,
@@ -227,9 +327,14 @@
    "country": "India",
    "role": "BATTER",
    "cu": "",
-   "base": 150,
+   "base": 75,
    "set": "Marquee",
-   "cat": "M"
+   "cat": "M",
+   "series": 9,
+   "lot": 12,
+   "tier": "VALUE",
+   "teamRef": "Delhi",
+   "valuePoints": 12
   },
   {
    "sr": 22,
@@ -238,9 +343,14 @@
    "country": "India",
    "role": "BATTER",
    "cu": "",
-   "base": 150,
+   "base": 50,
    "set": "Marquee",
-   "cat": "M"
+   "cat": "M",
+   "series": 8,
+   "lot": 6,
+   "tier": "VALUE",
+   "teamRef": "Kolkata",
+   "valuePoints": 11
   },
   {
    "sr": 23,
@@ -249,9 +359,14 @@
    "country": "Overseas",
    "role": "BATTER",
    "cu": "",
-   "base": 150,
+   "base": 75,
    "set": "Marquee",
-   "cat": "M"
+   "cat": "M",
+   "series": 7,
+   "lot": 3,
+   "tier": "VALUE",
+   "teamRef": "Chennai",
+   "valuePoints": 13
   },
   {
    "sr": 24,
@@ -260,9 +375,14 @@
    "country": "India",
    "role": "BATTER",
    "cu": "",
-   "base": 150,
+   "base": 100,
    "set": "Marquee",
-   "cat": "M"
+   "cat": "M",
+   "series": 1,
+   "lot": 5,
+   "tier": "PREMIUM",
+   "teamRef": "Delhi",
+   "valuePoints": 14
   },
   {
    "sr": 25,
@@ -271,9 +391,14 @@
    "country": "Overseas",
    "role": "BATTER",
    "cu": "",
-   "base": 150,
+   "base": 100,
    "set": "Marquee",
-   "cat": "M"
+   "cat": "M",
+   "series": 8,
+   "lot": 13,
+   "tier": "PREMIUM",
+   "teamRef": "Delhi",
+   "valuePoints": 14
   },
   {
    "sr": 26,
@@ -282,9 +407,14 @@
    "country": "India",
    "role": "BATTER",
    "cu": "",
-   "base": 150,
+   "base": 75,
    "set": "Marquee",
-   "cat": "M"
+   "cat": "M",
+   "series": 14,
+   "lot": 12,
+   "tier": "VALUE",
+   "teamRef": "Delhi",
+   "valuePoints": 12
   },
   {
    "sr": 27,
@@ -293,8 +423,13 @@
    "country": "Overseas",
    "role": "BATTER",
    "cu": "",
-   "base": 150,
-   "set": "Set 3"
+   "base": 75,
+   "set": "Set 3",
+   "series": 11,
+   "lot": 1,
+   "tier": "VALUE",
+   "teamRef": "Kolkata",
+   "valuePoints": 13
   },
   {
    "sr": 28,
@@ -303,8 +438,13 @@
    "country": "Overseas",
    "role": "BATTER",
    "cu": "",
-   "base": 100,
-   "set": "Set 4"
+   "base": 50,
+   "set": "Set 4",
+   "series": 14,
+   "lot": 5,
+   "tier": "VALUE",
+   "teamRef": "Delhi",
+   "valuePoints": 11
   },
   {
    "sr": 29,
@@ -313,9 +453,14 @@
    "country": "India",
    "role": "BATTER",
    "cu": "",
-   "base": 100,
+   "base": 75,
    "set": "Marquee",
-   "cat": "M"
+   "cat": "M",
+   "series": 12,
+   "lot": 6,
+   "tier": "VALUE",
+   "teamRef": "Mumbai",
+   "valuePoints": 12
   },
   {
    "sr": 30,
@@ -324,9 +469,14 @@
    "country": "India",
    "role": "BATTER",
    "cu": "",
-   "base": 100,
+   "base": 75,
    "set": "Marquee",
-   "cat": "M"
+   "cat": "M",
+   "series": 15,
+   "lot": 1,
+   "tier": "VALUE",
+   "teamRef": "Punjab",
+   "valuePoints": 13
   },
   {
    "sr": 31,
@@ -335,9 +485,14 @@
    "country": "India",
    "role": "BATTER",
    "cu": "",
-   "base": 100,
+   "base": 75,
    "set": "Marquee",
-   "cat": "M"
+   "cat": "M",
+   "series": 4,
+   "lot": 3,
+   "tier": "VALUE",
+   "teamRef": "Kolkata",
+   "valuePoints": 13
   },
   {
    "sr": 32,
@@ -346,9 +501,14 @@
    "country": "India",
    "role": "BATTER",
    "cu": "",
-   "base": 100,
+   "base": 75,
    "set": "Marquee",
-   "cat": "M"
+   "cat": "M",
+   "series": 4,
+   "lot": 14,
+   "tier": "VALUE",
+   "teamRef": "Chennai",
+   "valuePoints": 12
   },
   {
    "sr": 33,
@@ -359,7 +519,12 @@
    "cu": "",
    "base": 75,
    "set": "Marquee",
-   "cat": "M"
+   "cat": "M",
+   "series": 6,
+   "lot": 1,
+   "tier": "VALUE",
+   "teamRef": "Punjab",
+   "valuePoints": 13
   },
   {
    "sr": 34,
@@ -368,9 +533,14 @@
    "country": "India",
    "role": "BATTER",
    "cu": "",
-   "base": 75,
+   "base": 50,
    "set": "Marquee",
-   "cat": "M"
+   "cat": "M",
+   "series": 7,
+   "lot": 8,
+   "tier": "VALUE",
+   "teamRef": "Delhi",
+   "valuePoints": 11
   },
   {
    "sr": 35,
@@ -379,9 +549,14 @@
    "country": "India",
    "role": "BATTER",
    "cu": "",
-   "base": 50,
+   "base": 75,
    "set": "Marquee",
-   "cat": "M"
+   "cat": "M",
+   "series": 3,
+   "lot": 12,
+   "tier": "VALUE",
+   "teamRef": "Kolkata",
+   "valuePoints": 12
   },
   {
    "sr": 36,
@@ -390,9 +565,14 @@
    "country": "India",
    "role": "BATTER",
    "cu": "",
-   "base": 50,
+   "base": 75,
    "set": "Marquee",
-   "cat": "M"
+   "cat": "M",
+   "series": 13,
+   "lot": 13,
+   "tier": "VALUE",
+   "teamRef": "Hyderabad",
+   "valuePoints": 12
   },
   {
    "sr": 37,
@@ -401,9 +581,14 @@
    "country": "India",
    "role": "BATTER",
    "cu": "",
-   "base": 50,
+   "base": 75,
    "set": "Marquee",
-   "cat": "M"
+   "cat": "M",
+   "series": 12,
+   "lot": 13,
+   "tier": "VALUE",
+   "teamRef": "Chennai",
+   "valuePoints": 13
   },
   {
    "sr": 38,
@@ -412,8 +597,13 @@
    "country": "Overseas",
    "role": "BATTER",
    "cu": "",
-   "base": 50,
-   "set": "Set 4"
+   "base": 30,
+   "set": "Set 4",
+   "series": 3,
+   "lot": 14,
+   "tier": "DEVELOPMENT",
+   "teamRef": "Hyderabad",
+   "valuePoints": 7
   },
   {
    "sr": 39,
@@ -422,9 +612,14 @@
    "country": "India",
    "role": "BATTER",
    "cu": "",
-   "base": 50,
+   "base": 30,
    "set": "Marquee",
-   "cat": "M"
+   "cat": "M",
+   "series": 13,
+   "lot": 12,
+   "tier": "DEVELOPMENT",
+   "teamRef": "Rajasthan",
+   "valuePoints": 7
   },
   {
    "sr": 40,
@@ -433,9 +628,14 @@
    "country": "India",
    "role": "BATTER",
    "cu": "",
-   "base": 50,
+   "base": 30,
    "set": "Marquee",
-   "cat": "M"
+   "cat": "M",
+   "series": 1,
+   "lot": 10,
+   "tier": "DEVELOPMENT",
+   "teamRef": "Hyderabad",
+   "valuePoints": 7
   },
   {
    "sr": 41,
@@ -446,7 +646,12 @@
    "cu": "",
    "base": 30,
    "set": "Marquee",
-   "cat": "M"
+   "cat": "M",
+   "series": 1,
+   "lot": 9,
+   "tier": "DEVELOPMENT",
+   "teamRef": "Lucknow",
+   "valuePoints": 6
   },
   {
    "sr": 42,
@@ -457,7 +662,12 @@
    "cu": "",
    "base": 30,
    "set": "Marquee",
-   "cat": "M"
+   "cat": "M",
+   "series": 11,
+   "lot": 7,
+   "tier": "DEVELOPMENT",
+   "teamRef": "Rajasthan",
+   "valuePoints": 6
   },
   {
    "sr": 43,
@@ -466,9 +676,14 @@
    "country": "India",
    "role": "BATTER",
    "cu": "",
-   "base": 30,
+   "base": 150,
    "set": "Marquee",
-   "cat": "M"
+   "cat": "M",
+   "series": 7,
+   "lot": 13,
+   "tier": "ELITE",
+   "teamRef": "Rajasthan",
+   "valuePoints": 17
   },
   {
    "sr": 44,
@@ -477,9 +692,14 @@
    "country": "Overseas",
    "role": "BOWLER",
    "cu": "",
-   "base": 200,
+   "base": 100,
    "set": "Marquee",
-   "cat": "M"
+   "cat": "M",
+   "series": 11,
+   "lot": 6,
+   "tier": "PREMIUM",
+   "teamRef": "Lucknow",
+   "valuePoints": 15
   },
   {
    "sr": 45,
@@ -488,9 +708,14 @@
    "country": "India",
    "role": "BOWLER",
    "cu": "",
-   "base": 200,
+   "base": 150,
    "set": "Marquee",
-   "cat": "M"
+   "cat": "M",
+   "series": 3,
+   "lot": 7,
+   "tier": "ELITE",
+   "teamRef": "Punjab",
+   "valuePoints": 17
   },
   {
    "sr": 46,
@@ -501,7 +726,12 @@
    "cu": "",
    "base": 200,
    "set": "Marquee",
-   "cat": "M"
+   "cat": "M",
+   "series": 14,
+   "lot": 9,
+   "tier": "ICON",
+   "teamRef": "Mumbai",
+   "valuePoints": 20
   },
   {
    "sr": 47,
@@ -512,7 +742,12 @@
    "cu": "",
    "base": 200,
    "set": "Marquee",
-   "cat": "M"
+   "cat": "M",
+   "series": 11,
+   "lot": 8,
+   "tier": "ELITE",
+   "teamRef": "Rajasthan",
+   "valuePoints": 18
   },
   {
    "sr": 48,
@@ -523,7 +758,12 @@
    "cu": "",
    "base": 200,
    "set": "Marquee",
-   "cat": "M"
+   "cat": "M",
+   "series": 7,
+   "lot": 6,
+   "tier": "ELITE",
+   "teamRef": "Bengaluru",
+   "valuePoints": 18
   },
   {
    "sr": 49,
@@ -534,7 +774,12 @@
    "cu": "",
    "base": 200,
    "set": "Marquee",
-   "cat": "M"
+   "cat": "M",
+   "series": 10,
+   "lot": 3,
+   "tier": "ELITE",
+   "teamRef": "Gujarat",
+   "valuePoints": 18
   },
   {
    "sr": 50,
@@ -543,9 +788,14 @@
    "country": "India",
    "role": "BOWLER",
    "cu": "",
-   "base": 200,
+   "base": 150,
    "set": "Marquee",
-   "cat": "M"
+   "cat": "M",
+   "series": 14,
+   "lot": 11,
+   "tier": "ELITE",
+   "teamRef": "Delhi",
+   "valuePoints": 17
   },
   {
    "sr": 51,
@@ -554,9 +804,14 @@
    "country": "Overseas",
    "role": "BOWLER",
    "cu": "",
-   "base": 200,
+   "base": 150,
    "set": "Marquee",
-   "cat": "M"
+   "cat": "M",
+   "series": 2,
+   "lot": 6,
+   "tier": "ELITE",
+   "teamRef": "Delhi",
+   "valuePoints": 17
   },
   {
    "sr": 52,
@@ -565,9 +820,14 @@
    "country": "India",
    "role": "BOWLER",
    "cu": "",
-   "base": 200,
+   "base": 150,
    "set": "Marquee",
-   "cat": "M"
+   "cat": "M",
+   "series": 6,
+   "lot": 14,
+   "tier": "ELITE",
+   "teamRef": "Lucknow",
+   "valuePoints": 17
   },
   {
    "sr": 53,
@@ -576,9 +836,14 @@
    "country": "India",
    "role": "BOWLER",
    "cu": "",
-   "base": 200,
+   "base": 100,
    "set": "Marquee",
-   "cat": "M"
+   "cat": "M",
+   "series": 15,
+   "lot": 10,
+   "tier": "PREMIUM",
+   "teamRef": "Gujarat",
+   "valuePoints": 15
   },
   {
    "sr": 54,
@@ -589,7 +854,12 @@
    "cu": "",
    "base": 200,
    "set": "Marquee",
-   "cat": "M"
+   "cat": "M",
+   "series": 13,
+   "lot": 1,
+   "tier": "ELITE",
+   "teamRef": "Hyderabad",
+   "valuePoints": 18
   },
   {
    "sr": 55,
@@ -598,9 +868,14 @@
    "country": "Overseas",
    "role": "BOWLER",
    "cu": "",
-   "base": 200,
+   "base": 150,
    "set": "Marquee",
-   "cat": "M"
+   "cat": "M",
+   "series": 9,
+   "lot": 6,
+   "tier": "ELITE",
+   "teamRef": "Mumbai",
+   "valuePoints": 17
   },
   {
    "sr": 56,
@@ -609,9 +884,14 @@
    "country": "India",
    "role": "BOWLER",
    "cu": "",
-   "base": 200,
+   "base": 150,
    "set": "Marquee",
-   "cat": "M"
+   "cat": "M",
+   "series": 8,
+   "lot": 11,
+   "tier": "ELITE",
+   "teamRef": "Kolkata",
+   "valuePoints": 17
   },
   {
    "sr": 57,
@@ -620,9 +900,14 @@
    "country": "India",
    "role": "BOWLER",
    "cu": "",
-   "base": 200,
+   "base": 150,
    "set": "Marquee",
-   "cat": "M"
+   "cat": "M",
+   "series": 4,
+   "lot": 7,
+   "tier": "ELITE",
+   "teamRef": "Punjab",
+   "valuePoints": 17
   },
   {
    "sr": 58,
@@ -631,9 +916,14 @@
    "country": "India",
    "role": "BOWLER",
    "cu": "",
-   "base": 150,
+   "base": 100,
    "set": "Marquee",
-   "cat": "M"
+   "cat": "M",
+   "series": 4,
+   "lot": 6,
+   "tier": "PREMIUM",
+   "teamRef": "Lucknow",
+   "valuePoints": 14
   },
   {
    "sr": 59,
@@ -642,9 +932,14 @@
    "country": "India",
    "role": "BOWLER",
    "cu": "",
-   "base": 150,
+   "base": 100,
    "set": "Marquee",
-   "cat": "M"
+   "cat": "M",
+   "series": 4,
+   "lot": 4,
+   "tier": "PREMIUM",
+   "teamRef": "Bengaluru",
+   "valuePoints": 15
   },
   {
    "sr": 60,
@@ -653,9 +948,14 @@
    "country": "India",
    "role": "BOWLER",
    "cu": "",
-   "base": 150,
+   "base": 100,
    "set": "Marquee",
-   "cat": "M"
+   "cat": "M",
+   "series": 4,
+   "lot": 11,
+   "tier": "PREMIUM",
+   "teamRef": "Mumbai",
+   "valuePoints": 14
   },
   {
    "sr": 61,
@@ -664,9 +964,14 @@
    "country": "India",
    "role": "BOWLER",
    "cu": "",
-   "base": 150,
+   "base": 100,
    "set": "Marquee",
-   "cat": "M"
+   "cat": "M",
+   "series": 9,
+   "lot": 14,
+   "tier": "PREMIUM",
+   "teamRef": "Hyderabad",
+   "valuePoints": 14
   },
   {
    "sr": 62,
@@ -675,9 +980,14 @@
    "country": "India",
    "role": "BOWLER",
    "cu": "",
-   "base": 150,
+   "base": 75,
    "set": "Marquee",
-   "cat": "M"
+   "cat": "M",
+   "series": 2,
+   "lot": 1,
+   "tier": "VALUE",
+   "teamRef": "Hyderabad",
+   "valuePoints": 13
   },
   {
    "sr": 63,
@@ -686,9 +996,14 @@
    "country": "India",
    "role": "BOWLER",
    "cu": "",
-   "base": 150,
+   "base": 75,
    "set": "Marquee",
-   "cat": "M"
+   "cat": "M",
+   "series": 13,
+   "lot": 7,
+   "tier": "VALUE",
+   "teamRef": "Chennai",
+   "valuePoints": 13
   },
   {
    "sr": 64,
@@ -697,8 +1012,13 @@
    "country": "Overseas",
    "role": "BOWLER",
    "cu": "",
-   "base": 150,
-   "set": "Set 5"
+   "base": 75,
+   "set": "Set 5",
+   "series": 7,
+   "lot": 11,
+   "tier": "VALUE",
+   "teamRef": "Delhi",
+   "valuePoints": 13
   },
   {
    "sr": 65,
@@ -707,9 +1027,14 @@
    "country": "Overseas",
    "role": "BOWLER",
    "cu": "",
-   "base": 150,
+   "base": 75,
    "set": "Marquee",
-   "cat": "M"
+   "cat": "M",
+   "series": 14,
+   "lot": 10,
+   "tier": "VALUE",
+   "teamRef": "Punjab",
+   "valuePoints": 13
   },
   {
    "sr": 66,
@@ -718,9 +1043,14 @@
    "country": "Overseas",
    "role": "BOWLER",
    "cu": "",
-   "base": 150,
+   "base": 75,
    "set": "Marquee",
-   "cat": "M"
+   "cat": "M",
+   "series": 9,
+   "lot": 10,
+   "tier": "VALUE",
+   "teamRef": "Delhi",
+   "valuePoints": 13
   },
   {
    "sr": 67,
@@ -731,7 +1061,12 @@
    "cu": "",
    "base": 150,
    "set": "Marquee",
-   "cat": "M"
+   "cat": "M",
+   "series": 5,
+   "lot": 9,
+   "tier": "PREMIUM",
+   "teamRef": "Kolkata",
+   "valuePoints": 16
   },
   {
    "sr": 68,
@@ -740,9 +1075,14 @@
    "country": "Overseas",
    "role": "BOWLER",
    "cu": "",
-   "base": 150,
+   "base": 75,
    "set": "Marquee",
-   "cat": "M"
+   "cat": "M",
+   "series": 2,
+   "lot": 8,
+   "tier": "VALUE",
+   "teamRef": "Chennai",
+   "valuePoints": 13
   },
   {
    "sr": 69,
@@ -751,9 +1091,14 @@
    "country": "India",
    "role": "BOWLER",
    "cu": "",
-   "base": 150,
+   "base": 75,
    "set": "Marquee",
-   "cat": "M"
+   "cat": "M",
+   "series": 7,
+   "lot": 4,
+   "tier": "VALUE",
+   "teamRef": "Delhi",
+   "valuePoints": 13
   },
   {
    "sr": 70,
@@ -762,9 +1107,14 @@
    "country": "Overseas",
    "role": "BOWLER",
    "cu": "",
-   "base": 150,
+   "base": 75,
    "set": "Marquee",
-   "cat": "M"
+   "cat": "M",
+   "series": 5,
+   "lot": 12,
+   "tier": "VALUE",
+   "teamRef": "Rajasthan",
+   "valuePoints": 13
   },
   {
    "sr": 71,
@@ -773,9 +1123,14 @@
    "country": "Overseas",
    "role": "BOWLER",
    "cu": "",
-   "base": 150,
+   "base": 100,
    "set": "Marquee",
-   "cat": "M"
+   "cat": "M",
+   "series": 6,
+   "lot": 4,
+   "tier": "PREMIUM",
+   "teamRef": "Chennai",
+   "valuePoints": 15
   },
   {
    "sr": 72,
@@ -784,9 +1139,14 @@
    "country": "Overseas",
    "role": "BOWLER",
    "cu": "",
-   "base": 150,
+   "base": 75,
    "set": "Marquee",
-   "cat": "M"
+   "cat": "M",
+   "series": 6,
+   "lot": 7,
+   "tier": "VALUE",
+   "teamRef": "Bengaluru",
+   "valuePoints": 13
   },
   {
    "sr": 73,
@@ -795,9 +1155,14 @@
    "country": "India",
    "role": "BOWLER",
    "cu": "",
-   "base": 150,
+   "base": 100,
    "set": "Marquee",
-   "cat": "M"
+   "cat": "M",
+   "series": 2,
+   "lot": 2,
+   "tier": "PREMIUM",
+   "teamRef": "Gujarat",
+   "valuePoints": 14
   },
   {
    "sr": 74,
@@ -806,9 +1171,14 @@
    "country": "India",
    "role": "BOWLER",
    "cu": "",
-   "base": 150,
+   "base": 100,
    "set": "Marquee",
-   "cat": "M"
+   "cat": "M",
+   "series": 8,
+   "lot": 7,
+   "tier": "PREMIUM",
+   "teamRef": "Rajasthan",
+   "valuePoints": 14
   },
   {
    "sr": 75,
@@ -817,9 +1187,14 @@
    "country": "India",
    "role": "BOWLER",
    "cu": "",
-   "base": 150,
+   "base": 100,
    "set": "Marquee",
-   "cat": "M"
+   "cat": "M",
+   "series": 7,
+   "lot": 10,
+   "tier": "PREMIUM",
+   "teamRef": "Delhi",
+   "valuePoints": 14
   },
   {
    "sr": 76,
@@ -828,9 +1203,14 @@
    "country": "India",
    "role": "BOWLER",
    "cu": "",
-   "base": 150,
+   "base": 75,
    "set": "Marquee",
-   "cat": "M"
+   "cat": "M",
+   "series": 14,
+   "lot": 2,
+   "tier": "VALUE",
+   "teamRef": "Kolkata",
+   "valuePoints": 13
   },
   {
    "sr": 77,
@@ -839,9 +1219,14 @@
    "country": "Overseas",
    "role": "BOWLER",
    "cu": "",
-   "base": 100,
+   "base": 50,
    "set": "Marquee",
-   "cat": "M"
+   "cat": "M",
+   "series": 12,
+   "lot": 1,
+   "tier": "VALUE",
+   "teamRef": "Rajasthan",
+   "valuePoints": 11
   },
   {
    "sr": 78,
@@ -850,8 +1235,13 @@
    "country": "India",
    "role": "BOWLER",
    "cu": "",
-   "base": 100,
-   "set": "Set 4"
+   "base": 75,
+   "set": "Set 4",
+   "series": 10,
+   "lot": 10,
+   "tier": "VALUE",
+   "teamRef": "Kolkata",
+   "valuePoints": 13
   },
   {
    "sr": 79,
@@ -860,9 +1250,14 @@
    "country": "India",
    "role": "BOWLER",
    "cu": "",
-   "base": 100,
+   "base": 50,
    "set": "Marquee",
-   "cat": "M"
+   "cat": "M",
+   "series": 13,
+   "lot": 5,
+   "tier": "VALUE",
+   "teamRef": "Chennai",
+   "valuePoints": 11
   },
   {
    "sr": 80,
@@ -871,9 +1266,14 @@
    "country": "Overseas",
    "role": "BOWLER",
    "cu": "",
-   "base": 100,
+   "base": 50,
    "set": "Marquee",
-   "cat": "M"
+   "cat": "M",
+   "series": 1,
+   "lot": 11,
+   "tier": "VALUE",
+   "teamRef": "Chennai",
+   "valuePoints": 11
   },
   {
    "sr": 81,
@@ -882,9 +1282,14 @@
    "country": "Overseas",
    "role": "BOWLER",
    "cu": "",
-   "base": 100,
+   "base": 50,
    "set": "Marquee",
-   "cat": "M"
+   "cat": "M",
+   "series": 3,
+   "lot": 2,
+   "tier": "VALUE",
+   "teamRef": "Punjab",
+   "valuePoints": 11
   },
   {
    "sr": 82,
@@ -893,9 +1298,14 @@
    "country": "Overseas",
    "role": "BOWLER",
    "cu": "",
-   "base": 100,
+   "base": 50,
    "set": "Marquee",
-   "cat": "M"
+   "cat": "M",
+   "series": 11,
+   "lot": 2,
+   "tier": "VALUE",
+   "teamRef": "Kolkata",
+   "valuePoints": 11
   },
   {
    "sr": 83,
@@ -904,9 +1314,14 @@
    "country": "Overseas",
    "role": "BOWLER",
    "cu": "",
-   "base": 100,
+   "base": 50,
    "set": "Marquee",
-   "cat": "M"
+   "cat": "M",
+   "series": 12,
+   "lot": 2,
+   "tier": "VALUE",
+   "teamRef": "Hyderabad",
+   "valuePoints": 11
   },
   {
    "sr": 84,
@@ -915,9 +1330,14 @@
    "country": "Overseas",
    "role": "BOWLER",
    "cu": "",
-   "base": 100,
+   "base": 50,
    "set": "Marquee",
-   "cat": "M"
+   "cat": "M",
+   "series": 5,
+   "lot": 6,
+   "tier": "VALUE",
+   "teamRef": "Hyderabad",
+   "valuePoints": 11
   },
   {
    "sr": 85,
@@ -926,9 +1346,14 @@
    "country": "Overseas",
    "role": "BOWLER",
    "cu": "",
-   "base": 100,
+   "base": 50,
    "set": "Marquee",
-   "cat": "M"
+   "cat": "M",
+   "series": 4,
+   "lot": 9,
+   "tier": "VALUE",
+   "teamRef": "Hyderabad",
+   "valuePoints": 11
   },
   {
    "sr": 86,
@@ -937,9 +1362,14 @@
    "country": "Overseas",
    "role": "BOWLER",
    "cu": "",
-   "base": 100,
+   "base": 50,
    "set": "Marquee",
-   "cat": "M"
+   "cat": "M",
+   "series": 10,
+   "lot": 2,
+   "tier": "VALUE",
+   "teamRef": "Delhi",
+   "valuePoints": 11
   },
   {
    "sr": 87,
@@ -948,9 +1378,14 @@
    "country": "India",
    "role": "BOWLER",
    "cu": "",
-   "base": 100,
+   "base": 50,
    "set": "Marquee",
-   "cat": "M"
+   "cat": "M",
+   "series": 15,
+   "lot": 12,
+   "tier": "VALUE",
+   "teamRef": "Punjab",
+   "valuePoints": 11
   },
   {
    "sr": 88,
@@ -959,8 +1394,13 @@
    "country": "India",
    "role": "BOWLER",
    "cu": "",
-   "base": 100,
-   "set": "Set 4"
+   "base": 50,
+   "set": "Set 4",
+   "series": 13,
+   "lot": 9,
+   "tier": "VALUE",
+   "teamRef": "Kolkata",
+   "valuePoints": 11
   },
   {
    "sr": 89,
@@ -969,9 +1409,14 @@
    "country": "India",
    "role": "BOWLER",
    "cu": "",
-   "base": 100,
+   "base": 50,
    "set": "Marquee",
-   "cat": "M"
+   "cat": "M",
+   "series": 9,
+   "lot": 8,
+   "tier": "VALUE",
+   "teamRef": "Gujarat",
+   "valuePoints": 11
   },
   {
    "sr": 90,
@@ -980,9 +1425,14 @@
    "country": "Overseas",
    "role": "BOWLER",
    "cu": "",
-   "base": 100,
+   "base": 50,
    "set": "Marquee",
-   "cat": "M"
+   "cat": "M",
+   "series": 14,
+   "lot": 14,
+   "tier": "VALUE",
+   "teamRef": "Bengaluru",
+   "valuePoints": 11
   },
   {
    "sr": 91,
@@ -991,9 +1441,14 @@
    "country": "Overseas",
    "role": "BOWLER",
    "cu": "",
-   "base": 100,
+   "base": 50,
    "set": "Marquee",
-   "cat": "M"
+   "cat": "M",
+   "series": 9,
+   "lot": 5,
+   "tier": "VALUE",
+   "teamRef": "Rajasthan",
+   "valuePoints": 11
   },
   {
    "sr": 92,
@@ -1002,9 +1457,14 @@
    "country": "Overseas",
    "role": "BOWLER",
    "cu": "",
-   "base": 100,
+   "base": 50,
    "set": "Marquee",
-   "cat": "M"
+   "cat": "M",
+   "series": 12,
+   "lot": 7,
+   "tier": "VALUE",
+   "teamRef": "Gujarat",
+   "valuePoints": 11
   },
   {
    "sr": 93,
@@ -1015,7 +1475,12 @@
    "cu": "",
    "base": 100,
    "set": "Marquee",
-   "cat": "M"
+   "cat": "M",
+   "series": 9,
+   "lot": 9,
+   "tier": "PREMIUM",
+   "teamRef": "Lucknow",
+   "valuePoints": 15
   },
   {
    "sr": 94,
@@ -1024,9 +1489,14 @@
    "country": "India",
    "role": "BOWLER",
    "cu": "",
-   "base": 100,
+   "base": 75,
    "set": "Marquee",
-   "cat": "M"
+   "cat": "M",
+   "series": 1,
+   "lot": 15,
+   "tier": "VALUE",
+   "teamRef": "Lucknow",
+   "valuePoints": 13
   },
   {
    "sr": 95,
@@ -1035,9 +1505,14 @@
    "country": "India",
    "role": "BOWLER",
    "cu": "",
-   "base": 100,
+   "base": 50,
    "set": "Marquee",
-   "cat": "M"
+   "cat": "M",
+   "series": 10,
+   "lot": 11,
+   "tier": "VALUE",
+   "teamRef": "Chennai",
+   "valuePoints": 11
   },
   {
    "sr": 96,
@@ -1048,7 +1523,12 @@
    "cu": "",
    "base": 100,
    "set": "Marquee",
-   "cat": "M"
+   "cat": "M",
+   "series": 12,
+   "lot": 12,
+   "tier": "PREMIUM",
+   "teamRef": "Rajasthan",
+   "valuePoints": 14
   },
   {
    "sr": 97,
@@ -1057,9 +1537,14 @@
    "country": "Overseas",
    "role": "BOWLER",
    "cu": "",
-   "base": 100,
+   "base": 50,
    "set": "Marquee",
-   "cat": "M"
+   "cat": "M",
+   "series": 8,
+   "lot": 8,
+   "tier": "VALUE",
+   "teamRef": "Chennai",
+   "valuePoints": 11
   },
   {
    "sr": 98,
@@ -1068,9 +1553,14 @@
    "country": "India",
    "role": "BOWLER",
    "cu": "",
-   "base": 100,
+   "base": 50,
    "set": "Marquee",
-   "cat": "M"
+   "cat": "M",
+   "series": 1,
+   "lot": 14,
+   "tier": "VALUE",
+   "teamRef": "Kolkata",
+   "valuePoints": 11
   },
   {
    "sr": 99,
@@ -1079,9 +1569,14 @@
    "country": "India",
    "role": "BOWLER",
    "cu": "",
-   "base": 100,
+   "base": 50,
    "set": "Marquee",
-   "cat": "M"
+   "cat": "M",
+   "series": 15,
+   "lot": 11,
+   "tier": "VALUE",
+   "teamRef": "Punjab",
+   "valuePoints": 11
   },
   {
    "sr": 100,
@@ -1090,9 +1585,14 @@
    "country": "Overseas",
    "role": "BOWLER",
    "cu": "",
-   "base": 100,
+   "base": 50,
    "set": "Marquee",
-   "cat": "M"
+   "cat": "M",
+   "series": 11,
+   "lot": 11,
+   "tier": "VALUE",
+   "teamRef": "Punjab",
+   "valuePoints": 11
   },
   {
    "sr": 101,
@@ -1101,9 +1601,14 @@
    "country": "Overseas",
    "role": "BOWLER",
    "cu": "",
-   "base": 75,
+   "base": 30,
    "set": "Marquee",
-   "cat": "M"
+   "cat": "M",
+   "series": 14,
+   "lot": 4,
+   "tier": "DEVELOPMENT",
+   "teamRef": "Mumbai",
+   "valuePoints": 9
   },
   {
    "sr": 102,
@@ -1112,9 +1617,14 @@
    "country": "India",
    "role": "BOWLER",
    "cu": "",
-   "base": 75,
+   "base": 30,
    "set": "Marquee",
-   "cat": "M"
+   "cat": "M",
+   "series": 15,
+   "lot": 6,
+   "tier": "DEVELOPMENT",
+   "teamRef": "Lucknow",
+   "valuePoints": 9
   },
   {
    "sr": 103,
@@ -1123,9 +1633,14 @@
    "country": "Overseas",
    "role": "BOWLER",
    "cu": "",
-   "base": 75,
+   "base": 30,
    "set": "Marquee",
-   "cat": "M"
+   "cat": "M",
+   "series": 15,
+   "lot": 5,
+   "tier": "DEVELOPMENT",
+   "teamRef": "Hyderabad",
+   "valuePoints": 9
   },
   {
    "sr": 104,
@@ -1134,8 +1649,13 @@
    "country": "India",
    "role": "BOWLER",
    "cu": "",
-   "base": 75,
-   "set": "Set 5"
+   "base": 30,
+   "set": "Set 5",
+   "series": 15,
+   "lot": 3,
+   "tier": "DEVELOPMENT",
+   "teamRef": "Gujarat",
+   "valuePoints": 9
   },
   {
    "sr": 105,
@@ -1144,9 +1664,14 @@
    "country": "India",
    "role": "BOWLER",
    "cu": "",
-   "base": 75,
+   "base": 30,
    "set": "Marquee",
-   "cat": "M"
+   "cat": "M",
+   "series": 8,
+   "lot": 5,
+   "tier": "DEVELOPMENT",
+   "teamRef": "Kolkata",
+   "valuePoints": 9
   },
   {
    "sr": 106,
@@ -1155,8 +1680,13 @@
    "country": "India",
    "role": "BOWLER",
    "cu": "",
-   "base": 75,
-   "set": "Set 2"
+   "base": 30,
+   "set": "Set 2",
+   "series": 7,
+   "lot": 14,
+   "tier": "DEVELOPMENT",
+   "teamRef": "Gujarat",
+   "valuePoints": 9
   },
   {
    "sr": 107,
@@ -1165,9 +1695,14 @@
    "country": "India",
    "role": "BOWLER",
    "cu": "",
-   "base": 75,
+   "base": 30,
    "set": "Marquee",
-   "cat": "M"
+   "cat": "M",
+   "series": 3,
+   "lot": 8,
+   "tier": "DEVELOPMENT",
+   "teamRef": "Mumbai",
+   "valuePoints": 9
   },
   {
    "sr": 108,
@@ -1176,8 +1711,13 @@
    "country": "India",
    "role": "BOWLER",
    "cu": "",
-   "base": 75,
-   "set": "Set 4"
+   "base": 30,
+   "set": "Set 4",
+   "series": 4,
+   "lot": 8,
+   "tier": "DEVELOPMENT",
+   "teamRef": "Chennai",
+   "valuePoints": 9
   },
   {
    "sr": 109,
@@ -1186,8 +1726,13 @@
    "country": "Overseas",
    "role": "BOWLER",
    "cu": "",
-   "base": 75,
-   "set": "Set 5"
+   "base": 30,
+   "set": "Set 5",
+   "series": 13,
+   "lot": 3,
+   "tier": "DEVELOPMENT",
+   "teamRef": "Chennai",
+   "valuePoints": 9
   },
   {
    "sr": 110,
@@ -1196,8 +1741,13 @@
    "country": "India",
    "role": "BOWLER",
    "cu": "",
-   "base": 75,
-   "set": "Set 1"
+   "base": 30,
+   "set": "Set 1",
+   "series": 5,
+   "lot": 5,
+   "tier": "DEVELOPMENT",
+   "teamRef": "Kolkata",
+   "valuePoints": 9
   },
   {
    "sr": 111,
@@ -1206,9 +1756,14 @@
    "country": "India",
    "role": "BOWLER",
    "cu": "",
-   "base": 75,
+   "base": 30,
    "set": "Marquee",
-   "cat": "M"
+   "cat": "M",
+   "series": 6,
+   "lot": 13,
+   "tier": "DEVELOPMENT",
+   "teamRef": "Lucknow",
+   "valuePoints": 9
   },
   {
    "sr": 112,
@@ -1217,9 +1772,14 @@
    "country": "India",
    "role": "BOWLER",
    "cu": "",
-   "base": 75,
+   "base": 30,
    "set": "Marquee",
-   "cat": "M"
+   "cat": "M",
+   "series": 10,
+   "lot": 14,
+   "tier": "DEVELOPMENT",
+   "teamRef": "Bengaluru",
+   "valuePoints": 9
   },
   {
    "sr": 113,
@@ -1228,9 +1788,14 @@
    "country": "India",
    "role": "BOWLER",
    "cu": "",
-   "base": 75,
+   "base": 30,
    "set": "Marquee",
-   "cat": "M"
+   "cat": "M",
+   "series": 3,
+   "lot": 10,
+   "tier": "DEVELOPMENT",
+   "teamRef": "Hyderabad",
+   "valuePoints": 9
   },
   {
    "sr": 114,
@@ -1239,9 +1804,14 @@
    "country": "India",
    "role": "BOWLER",
    "cu": "",
-   "base": 75,
+   "base": 30,
    "set": "Marquee",
-   "cat": "M"
+   "cat": "M",
+   "series": 2,
+   "lot": 3,
+   "tier": "DEVELOPMENT",
+   "teamRef": "Rajasthan",
+   "valuePoints": 9
   },
   {
    "sr": 115,
@@ -1250,9 +1820,14 @@
    "country": "India",
    "role": "BOWLER",
    "cu": "",
-   "base": 75,
+   "base": 30,
    "set": "Marquee",
-   "cat": "M"
+   "cat": "M",
+   "series": 6,
+   "lot": 2,
+   "tier": "DEVELOPMENT",
+   "teamRef": "Delhi",
+   "valuePoints": 9
   },
   {
    "sr": 116,
@@ -1261,8 +1836,13 @@
    "country": "India",
    "role": "BOWLER",
    "cu": "",
-   "base": 75,
-   "set": "Set 2"
+   "base": 30,
+   "set": "Set 2",
+   "series": 11,
+   "lot": 5,
+   "tier": "DEVELOPMENT",
+   "teamRef": "Bengaluru",
+   "valuePoints": 9
   },
   {
    "sr": 117,
@@ -1271,9 +1851,14 @@
    "country": "India",
    "role": "BOWLER",
    "cu": "",
-   "base": 75,
+   "base": 30,
    "set": "Marquee",
-   "cat": "M"
+   "cat": "M",
+   "series": 8,
+   "lot": 12,
+   "tier": "DEVELOPMENT",
+   "teamRef": "Punjab",
+   "valuePoints": 9
   },
   {
    "sr": 118,
@@ -1282,9 +1867,14 @@
    "country": "India",
    "role": "BOWLER",
    "cu": "",
-   "base": 75,
+   "base": 30,
    "set": "Marquee",
-   "cat": "M"
+   "cat": "M",
+   "series": 3,
+   "lot": 11,
+   "tier": "DEVELOPMENT",
+   "teamRef": "Hyderabad",
+   "valuePoints": 9
   },
   {
    "sr": 119,
@@ -1293,8 +1883,13 @@
    "country": "India",
    "role": "BOWLER",
    "cu": "",
-   "base": 50,
-   "set": "Set 5"
+   "base": 30,
+   "set": "Set 5",
+   "series": 1,
+   "lot": 4,
+   "tier": "DEVELOPMENT",
+   "teamRef": "Chennai",
+   "valuePoints": 7
   },
   {
    "sr": 120,
@@ -1303,9 +1898,14 @@
    "country": "India",
    "role": "BOWLER",
    "cu": "",
-   "base": 50,
+   "base": 30,
    "set": "Marquee",
-   "cat": "M"
+   "cat": "M",
+   "series": 3,
+   "lot": 3,
+   "tier": "DEVELOPMENT",
+   "teamRef": "Bengaluru",
+   "valuePoints": 7
   },
   {
    "sr": 121,
@@ -1315,7 +1915,12 @@
    "role": "BOWLER",
    "cu": "",
    "base": 30,
-   "set": "Set 2"
+   "set": "Set 2",
+   "series": 8,
+   "lot": 9,
+   "tier": "DEVELOPMENT",
+   "teamRef": "Bengaluru",
+   "valuePoints": 6
   },
   {
    "sr": 122,
@@ -1326,7 +1931,12 @@
    "cu": "",
    "base": 30,
    "set": "Marquee",
-   "cat": "M"
+   "cat": "M",
+   "series": 1,
+   "lot": 1,
+   "tier": "DEVELOPMENT",
+   "teamRef": "Gujarat",
+   "valuePoints": 6
   },
   {
    "sr": 123,
@@ -1337,7 +1947,12 @@
    "cu": "",
    "base": 30,
    "set": "Marquee",
-   "cat": "M"
+   "cat": "M",
+   "series": 5,
+   "lot": 7,
+   "tier": "DEVELOPMENT",
+   "teamRef": "Mumbai",
+   "valuePoints": 6
   },
   {
    "sr": 124,
@@ -1348,7 +1963,12 @@
    "cu": "",
    "base": 30,
    "set": "Marquee",
-   "cat": "M"
+   "cat": "M",
+   "series": 7,
+   "lot": 1,
+   "tier": "DEVELOPMENT",
+   "teamRef": "Chennai",
+   "valuePoints": 6
   },
   {
    "sr": 125,
@@ -1359,7 +1979,12 @@
    "cu": "",
    "base": 30,
    "set": "Marquee",
-   "cat": "M"
+   "cat": "M",
+   "series": 6,
+   "lot": 12,
+   "tier": "DEVELOPMENT",
+   "teamRef": "Hyderabad",
+   "valuePoints": 6
   },
   {
    "sr": 126,
@@ -1370,7 +1995,12 @@
    "cu": "",
    "base": 30,
    "set": "Marquee",
-   "cat": "M"
+   "cat": "M",
+   "series": 12,
+   "lot": 4,
+   "tier": "DEVELOPMENT",
+   "teamRef": "Chennai",
+   "valuePoints": 6
   },
   {
    "sr": 127,
@@ -1380,7 +2010,12 @@
    "role": "BOWLER",
    "cu": "",
    "base": 30,
-   "set": "Set 3"
+   "set": "Set 3",
+   "series": 5,
+   "lot": 15,
+   "tier": "DEVELOPMENT",
+   "teamRef": "Hyderabad",
+   "valuePoints": 6
   },
   {
    "sr": 128,
@@ -1391,7 +2026,12 @@
    "cu": "",
    "base": 30,
    "set": "Marquee",
-   "cat": "M"
+   "cat": "M",
+   "series": 11,
+   "lot": 12,
+   "tier": "DEVELOPMENT",
+   "teamRef": "Rajasthan",
+   "valuePoints": 6
   },
   {
    "sr": 129,
@@ -1400,9 +2040,14 @@
    "country": "India",
    "role": "ALL-ROUNDER",
    "cu": "",
-   "base": 200,
+   "base": 150,
    "set": "Marquee",
-   "cat": "M"
+   "cat": "M",
+   "series": 2,
+   "lot": 4,
+   "tier": "ELITE",
+   "teamRef": "Hyderabad",
+   "valuePoints": 17
   },
   {
    "sr": 130,
@@ -1411,9 +2056,14 @@
    "country": "India",
    "role": "ALL-ROUNDER",
    "cu": "",
-   "base": 200,
+   "base": 150,
    "set": "Marquee",
-   "cat": "M"
+   "cat": "M",
+   "series": 7,
+   "lot": 2,
+   "tier": "ELITE",
+   "teamRef": "Delhi",
+   "valuePoints": 17
   },
   {
    "sr": 131,
@@ -1422,9 +2072,14 @@
    "country": "Overseas",
    "role": "ALL-ROUNDER",
    "cu": "",
-   "base": 200,
+   "base": 150,
    "set": "Marquee",
-   "cat": "M"
+   "cat": "M",
+   "series": 12,
+   "lot": 9,
+   "tier": "ELITE",
+   "teamRef": "Kolkata",
+   "valuePoints": 17
   },
   {
    "sr": 132,
@@ -1433,9 +2088,14 @@
    "country": "Overseas",
    "role": "ALL-ROUNDER",
    "cu": "",
-   "base": 200,
+   "base": 100,
    "set": "Marquee",
-   "cat": "M"
+   "cat": "M",
+   "series": 4,
+   "lot": 2,
+   "tier": "PREMIUM",
+   "teamRef": "Gujarat",
+   "valuePoints": 15
   },
   {
    "sr": 133,
@@ -1446,7 +2106,12 @@
    "cu": "",
    "base": 200,
    "set": "Marquee",
-   "cat": "M"
+   "cat": "M",
+   "series": 5,
+   "lot": 10,
+   "tier": "ELITE",
+   "teamRef": "Mumbai",
+   "valuePoints": 18
   },
   {
    "sr": 134,
@@ -1455,9 +2120,14 @@
    "country": "India",
    "role": "ALL-ROUNDER",
    "cu": "",
-   "base": 200,
+   "base": 100,
    "set": "Marquee",
-   "cat": "M"
+   "cat": "M",
+   "series": 10,
+   "lot": 12,
+   "tier": "PREMIUM",
+   "teamRef": "Bengaluru",
+   "valuePoints": 15
   },
   {
    "sr": 135,
@@ -1466,9 +2136,14 @@
    "country": "Overseas",
    "role": "ALL-ROUNDER",
    "cu": "",
-   "base": 200,
+   "base": 150,
    "set": "Marquee",
-   "cat": "M"
+   "cat": "M",
+   "series": 8,
+   "lot": 3,
+   "tier": "PREMIUM",
+   "teamRef": "Hyderabad",
+   "valuePoints": 16
   },
   {
    "sr": 136,
@@ -1477,9 +2152,14 @@
    "country": "Overseas",
    "role": "ALL-ROUNDER",
    "cu": "",
-   "base": 200,
+   "base": 150,
    "set": "Marquee",
-   "cat": "M"
+   "cat": "M",
+   "series": 9,
+   "lot": 13,
+   "tier": "PREMIUM",
+   "teamRef": "Punjab",
+   "valuePoints": 16
   },
   {
    "sr": 137,
@@ -1488,9 +2168,14 @@
    "country": "Overseas",
    "role": "ALL-ROUNDER",
    "cu": "",
-   "base": 200,
+   "base": 150,
    "set": "Marquee",
-   "cat": "M"
+   "cat": "M",
+   "series": 14,
+   "lot": 3,
+   "tier": "PREMIUM",
+   "teamRef": "Punjab",
+   "valuePoints": 16
   },
   {
    "sr": 138,
@@ -1499,9 +2184,14 @@
    "country": "Overseas",
    "role": "ALL-ROUNDER",
    "cu": "",
-   "base": 200,
+   "base": 150,
    "set": "Marquee",
-   "cat": "M"
+   "cat": "M",
+   "series": 12,
+   "lot": 5,
+   "tier": "ELITE",
+   "teamRef": "Lucknow",
+   "valuePoints": 17
   },
   {
    "sr": 139,
@@ -1510,9 +2200,14 @@
    "country": "Overseas",
    "role": "ALL-ROUNDER",
    "cu": "",
-   "base": 200,
+   "base": 100,
    "set": "Marquee",
-   "cat": "M"
+   "cat": "M",
+   "series": 1,
+   "lot": 2,
+   "tier": "PREMIUM",
+   "teamRef": "Mumbai",
+   "valuePoints": 14
   },
   {
    "sr": 140,
@@ -1521,9 +2216,14 @@
    "country": "India",
    "role": "ALL-ROUNDER",
    "cu": "",
-   "base": 200,
+   "base": 100,
    "set": "Marquee",
-   "cat": "M"
+   "cat": "M",
+   "series": 10,
+   "lot": 1,
+   "tier": "PREMIUM",
+   "teamRef": "Hyderabad",
+   "valuePoints": 15
   },
   {
    "sr": 141,
@@ -1532,8 +2232,13 @@
    "country": "Overseas",
    "role": "ALL-ROUNDER",
    "cu": "",
-   "base": 200,
-   "set": "Set 2"
+   "base": 150,
+   "set": "Set 2",
+   "series": 13,
+   "lot": 2,
+   "tier": "PREMIUM",
+   "teamRef": "Kolkata",
+   "valuePoints": 16
   },
   {
    "sr": 142,
@@ -1544,7 +2249,12 @@
    "cu": "",
    "base": 200,
    "set": "Marquee",
-   "cat": "M"
+   "cat": "M",
+   "series": 4,
+   "lot": 1,
+   "tier": "ICON",
+   "teamRef": "Gujarat",
+   "valuePoints": 19
   },
   {
    "sr": 143,
@@ -1555,7 +2265,12 @@
    "cu": "",
    "base": 200,
    "set": "Marquee",
-   "cat": "M"
+   "cat": "M",
+   "series": 11,
+   "lot": 9,
+   "tier": "ICON",
+   "teamRef": "Rajasthan",
+   "valuePoints": 19
   },
   {
    "sr": 144,
@@ -1564,9 +2279,14 @@
    "country": "India",
    "role": "ALL-ROUNDER",
    "cu": "",
-   "base": 200,
+   "base": 100,
    "set": "Marquee",
-   "cat": "M"
+   "cat": "M",
+   "series": 2,
+   "lot": 5,
+   "tier": "PREMIUM",
+   "teamRef": "Rajasthan",
+   "valuePoints": 15
   },
   {
    "sr": 145,
@@ -1575,8 +2295,13 @@
    "country": "Overseas",
    "role": "ALL-ROUNDER",
    "cu": "",
-   "base": 200,
-   "set": "Set 1"
+   "base": 150,
+   "set": "Set 1",
+   "series": 3,
+   "lot": 13,
+   "tier": "PREMIUM",
+   "teamRef": "Rajasthan",
+   "valuePoints": 16
   },
   {
    "sr": 146,
@@ -1587,7 +2312,12 @@
    "cu": "",
    "base": 200,
    "set": "Marquee",
-   "cat": "M"
+   "cat": "M",
+   "series": 6,
+   "lot": 9,
+   "tier": "ELITE",
+   "teamRef": "Kolkata",
+   "valuePoints": 18
   },
   {
    "sr": 147,
@@ -1596,9 +2326,14 @@
    "country": "Overseas",
    "role": "ALL-ROUNDER",
    "cu": "",
-   "base": 200,
+   "base": 150,
    "set": "Marquee",
-   "cat": "M"
+   "cat": "M",
+   "series": 10,
+   "lot": 7,
+   "tier": "ELITE",
+   "teamRef": "Lucknow",
+   "valuePoints": 17
   },
   {
    "sr": 148,
@@ -1607,9 +2342,14 @@
    "country": "India",
    "role": "ALL-ROUNDER",
    "cu": "",
-   "base": 200,
+   "base": 100,
    "set": "Marquee",
-   "cat": "M"
+   "cat": "M",
+   "series": 3,
+   "lot": 9,
+   "tier": "PREMIUM",
+   "teamRef": "Gujarat",
+   "valuePoints": 14
   },
   {
    "sr": 149,
@@ -1618,9 +2358,14 @@
    "country": "Overseas",
    "role": "ALL-ROUNDER",
    "cu": "",
-   "base": 150,
+   "base": 75,
    "set": "Marquee",
-   "cat": "M"
+   "cat": "M",
+   "series": 9,
+   "lot": 4,
+   "tier": "VALUE",
+   "teamRef": "Punjab",
+   "valuePoints": 12
   },
   {
    "sr": 150,
@@ -1629,9 +2374,14 @@
    "country": "Overseas",
    "role": "ALL-ROUNDER",
    "cu": "",
-   "base": 150,
+   "base": 50,
    "set": "Marquee",
-   "cat": "M"
+   "cat": "M",
+   "series": 4,
+   "lot": 12,
+   "tier": "VALUE",
+   "teamRef": "Rajasthan",
+   "valuePoints": 11
   },
   {
    "sr": 151,
@@ -1640,9 +2390,14 @@
    "country": "Overseas",
    "role": "ALL-ROUNDER",
    "cu": "",
-   "base": 150,
+   "base": 75,
    "set": "Marquee",
-   "cat": "M"
+   "cat": "M",
+   "series": 14,
+   "lot": 6,
+   "tier": "VALUE",
+   "teamRef": "Bengaluru",
+   "valuePoints": 13
   },
   {
    "sr": 152,
@@ -1651,9 +2406,14 @@
    "country": "Overseas",
    "role": "ALL-ROUNDER",
    "cu": "",
-   "base": 150,
+   "base": 75,
    "set": "Marquee",
-   "cat": "M"
+   "cat": "M",
+   "series": 3,
+   "lot": 5,
+   "tier": "VALUE",
+   "teamRef": "Chennai",
+   "valuePoints": 12
   },
   {
    "sr": 153,
@@ -1662,9 +2422,14 @@
    "country": "Overseas",
    "role": "ALL-ROUNDER",
    "cu": "",
-   "base": 150,
+   "base": 100,
    "set": "Marquee",
-   "cat": "M"
+   "cat": "M",
+   "series": 2,
+   "lot": 13,
+   "tier": "PREMIUM",
+   "teamRef": "Gujarat",
+   "valuePoints": 14
   },
   {
    "sr": 154,
@@ -1673,9 +2438,14 @@
    "country": "Overseas",
    "role": "ALL-ROUNDER",
    "cu": "",
-   "base": 150,
+   "base": 75,
    "set": "Marquee",
-   "cat": "M"
+   "cat": "M",
+   "series": 14,
+   "lot": 7,
+   "tier": "VALUE",
+   "teamRef": "Hyderabad",
+   "valuePoints": 13
   },
   {
    "sr": 155,
@@ -1684,9 +2454,14 @@
    "country": "India",
    "role": "ALL-ROUNDER",
    "cu": "",
-   "base": 150,
+   "base": 75,
    "set": "Marquee",
-   "cat": "M"
+   "cat": "M",
+   "series": 9,
+   "lot": 2,
+   "tier": "VALUE",
+   "teamRef": "Lucknow",
+   "valuePoints": 12
   },
   {
    "sr": 156,
@@ -1695,9 +2470,14 @@
    "country": "India",
    "role": "ALL-ROUNDER",
    "cu": "",
-   "base": 150,
+   "base": 75,
    "set": "Marquee",
-   "cat": "M"
+   "cat": "M",
+   "series": 15,
+   "lot": 9,
+   "tier": "VALUE",
+   "teamRef": "Gujarat",
+   "valuePoints": 12
   },
   {
    "sr": 157,
@@ -1706,9 +2486,14 @@
    "country": "India",
    "role": "ALL-ROUNDER",
    "cu": "",
-   "base": 150,
+   "base": 75,
    "set": "Marquee",
-   "cat": "M"
+   "cat": "M",
+   "series": 13,
+   "lot": 8,
+   "tier": "VALUE",
+   "teamRef": "Mumbai",
+   "valuePoints": 12
   },
   {
    "sr": 158,
@@ -1717,9 +2502,14 @@
    "country": "Overseas",
    "role": "ALL-ROUNDER",
    "cu": "",
-   "base": 150,
+   "base": 75,
    "set": "Marquee",
-   "cat": "M"
+   "cat": "M",
+   "series": 11,
+   "lot": 14,
+   "tier": "VALUE",
+   "teamRef": "Mumbai",
+   "valuePoints": 13
   },
   {
    "sr": 159,
@@ -1728,9 +2518,14 @@
    "country": "India",
    "role": "ALL-ROUNDER",
    "cu": "",
-   "base": 150,
+   "base": 100,
    "set": "Marquee",
-   "cat": "M"
+   "cat": "M",
+   "series": 13,
+   "lot": 6,
+   "tier": "PREMIUM",
+   "teamRef": "Chennai",
+   "valuePoints": 15
   },
   {
    "sr": 160,
@@ -1739,9 +2534,14 @@
    "country": "India",
    "role": "ALL-ROUNDER",
    "cu": "",
-   "base": 150,
+   "base": 100,
    "set": "Marquee",
-   "cat": "M"
+   "cat": "M",
+   "series": 6,
+   "lot": 6,
+   "tier": "PREMIUM",
+   "teamRef": "Bengaluru",
+   "valuePoints": 15
   },
   {
    "sr": 161,
@@ -1750,9 +2550,14 @@
    "country": "Overseas",
    "role": "ALL-ROUNDER",
    "cu": "",
-   "base": 150,
+   "base": 100,
    "set": "Marquee",
-   "cat": "M"
+   "cat": "M",
+   "series": 4,
+   "lot": 10,
+   "tier": "PREMIUM",
+   "teamRef": "Mumbai",
+   "valuePoints": 15
   },
   {
    "sr": 162,
@@ -1761,9 +2566,14 @@
    "country": "India",
    "role": "ALL-ROUNDER",
    "cu": "",
-   "base": 100,
+   "base": 50,
    "set": "Marquee",
-   "cat": "M"
+   "cat": "M",
+   "series": 10,
+   "lot": 13,
+   "tier": "VALUE",
+   "teamRef": "Chennai",
+   "valuePoints": 11
   },
   {
    "sr": 163,
@@ -1772,9 +2582,14 @@
    "country": "India",
    "role": "ALL-ROUNDER",
    "cu": "",
-   "base": 100,
+   "base": 75,
    "set": "Marquee",
-   "cat": "M"
+   "cat": "M",
+   "series": 11,
+   "lot": 13,
+   "tier": "VALUE",
+   "teamRef": "Delhi",
+   "valuePoints": 13
   },
   {
    "sr": 164,
@@ -1783,9 +2598,14 @@
    "country": "India",
    "role": "ALL-ROUNDER",
    "cu": "",
-   "base": 100,
+   "base": 75,
    "set": "Marquee",
-   "cat": "M"
+   "cat": "M",
+   "series": 1,
+   "lot": 8,
+   "tier": "VALUE",
+   "teamRef": "Lucknow",
+   "valuePoints": 12
   },
   {
    "sr": 165,
@@ -1794,9 +2614,14 @@
    "country": "Overseas",
    "role": "ALL-ROUNDER",
    "cu": "",
-   "base": 100,
+   "base": 75,
    "set": "Marquee",
-   "cat": "M"
+   "cat": "M",
+   "series": 7,
+   "lot": 5,
+   "tier": "VALUE",
+   "teamRef": "Punjab",
+   "valuePoints": 12
   },
   {
    "sr": 166,
@@ -1805,9 +2630,14 @@
    "country": "Overseas",
    "role": "ALL-ROUNDER",
    "cu": "",
-   "base": 100,
+   "base": 75,
    "set": "Marquee",
-   "cat": "M"
+   "cat": "M",
+   "series": 5,
+   "lot": 3,
+   "tier": "VALUE",
+   "teamRef": "Punjab",
+   "valuePoints": 12
   },
   {
    "sr": 167,
@@ -1816,9 +2646,14 @@
    "country": "India",
    "role": "ALL-ROUNDER",
    "cu": "",
-   "base": 100,
+   "base": 75,
    "set": "Marquee",
-   "cat": "M"
+   "cat": "M",
+   "series": 15,
+   "lot": 13,
+   "tier": "VALUE",
+   "teamRef": "Gujarat",
+   "valuePoints": 13
   },
   {
    "sr": 168,
@@ -1827,9 +2662,14 @@
    "country": "India",
    "role": "ALL-ROUNDER",
    "cu": "",
-   "base": 100,
+   "base": 75,
    "set": "Marquee",
-   "cat": "M"
+   "cat": "M",
+   "series": 7,
+   "lot": 9,
+   "tier": "VALUE",
+   "teamRef": "Kolkata",
+   "valuePoints": 13
   },
   {
    "sr": 169,
@@ -1838,9 +2678,14 @@
    "country": "India",
    "role": "ALL-ROUNDER",
    "cu": "",
-   "base": 100,
+   "base": 75,
    "set": "Marquee",
-   "cat": "M"
+   "cat": "M",
+   "series": 5,
+   "lot": 2,
+   "tier": "VALUE",
+   "teamRef": "Gujarat",
+   "valuePoints": 12
   },
   {
    "sr": 170,
@@ -1849,9 +2694,14 @@
    "country": "Overseas",
    "role": "ALL-ROUNDER",
    "cu": "",
-   "base": 100,
+   "base": 75,
    "set": "Marquee",
-   "cat": "M"
+   "cat": "M",
+   "series": 1,
+   "lot": 6,
+   "tier": "VALUE",
+   "teamRef": "Bengaluru",
+   "valuePoints": 13
   },
   {
    "sr": 171,
@@ -1860,9 +2710,14 @@
    "country": "India",
    "role": "ALL-ROUNDER",
    "cu": "",
-   "base": 100,
+   "base": 75,
    "set": "Marquee",
-   "cat": "M"
+   "cat": "M",
+   "series": 12,
+   "lot": 3,
+   "tier": "VALUE",
+   "teamRef": "Punjab",
+   "valuePoints": 13
   },
   {
    "sr": 172,
@@ -1871,9 +2726,14 @@
    "country": "India",
    "role": "ALL-ROUNDER",
    "cu": "",
-   "base": 75,
+   "base": 50,
    "set": "Marquee",
-   "cat": "M"
+   "cat": "M",
+   "series": 6,
+   "lot": 5,
+   "tier": "VALUE",
+   "teamRef": "Lucknow",
+   "valuePoints": 11
   },
   {
    "sr": 173,
@@ -1882,9 +2742,14 @@
    "country": "India",
    "role": "ALL-ROUNDER",
    "cu": "",
-   "base": 75,
+   "base": 50,
    "set": "Marquee",
-   "cat": "M"
+   "cat": "M",
+   "series": 5,
+   "lot": 8,
+   "tier": "VALUE",
+   "teamRef": "Gujarat",
+   "valuePoints": 11
   },
   {
    "sr": 174,
@@ -1893,9 +2758,14 @@
    "country": "India",
    "role": "ALL-ROUNDER",
    "cu": "",
-   "base": 75,
+   "base": 50,
    "set": "Marquee",
-   "cat": "M"
+   "cat": "M",
+   "series": 1,
+   "lot": 13,
+   "tier": "VALUE",
+   "teamRef": "Gujarat",
+   "valuePoints": 10
   },
   {
    "sr": 175,
@@ -1906,7 +2776,12 @@
    "cu": "",
    "base": 50,
    "set": "Marquee",
-   "cat": "M"
+   "cat": "M",
+   "series": 9,
+   "lot": 1,
+   "tier": "VALUE",
+   "teamRef": "Kolkata",
+   "valuePoints": 10
   },
   {
    "sr": 176,
@@ -1917,7 +2792,12 @@
    "cu": "",
    "base": 50,
    "set": "Marquee",
-   "cat": "M"
+   "cat": "M",
+   "series": 8,
+   "lot": 2,
+   "tier": "VALUE",
+   "teamRef": "Delhi",
+   "valuePoints": 10
   },
   {
    "sr": 177,
@@ -1928,7 +2808,12 @@
    "cu": "",
    "base": 50,
    "set": "Marquee",
-   "cat": "M"
+   "cat": "M",
+   "series": 7,
+   "lot": 7,
+   "tier": "VALUE",
+   "teamRef": "Hyderabad",
+   "valuePoints": 11
   },
   {
    "sr": 178,
@@ -1939,7 +2824,12 @@
    "cu": "",
    "base": 50,
    "set": "Marquee",
-   "cat": "M"
+   "cat": "M",
+   "series": 13,
+   "lot": 11,
+   "tier": "VALUE",
+   "teamRef": "Gujarat",
+   "valuePoints": 10
   },
   {
    "sr": 179,
@@ -1948,8 +2838,13 @@
    "country": "India",
    "role": "ALL-ROUNDER",
    "cu": "",
-   "base": 50,
-   "set": "Set 5"
+   "base": 30,
+   "set": "Set 5",
+   "series": 8,
+   "lot": 14,
+   "tier": "DEVELOPMENT",
+   "teamRef": "Mumbai",
+   "valuePoints": 9
   },
   {
    "sr": 180,
@@ -1958,9 +2853,14 @@
    "country": "India",
    "role": "ALL-ROUNDER",
    "cu": "",
-   "base": 50,
+   "base": 30,
    "set": "Marquee",
-   "cat": "M"
+   "cat": "M",
+   "series": 14,
+   "lot": 13,
+   "tier": "DEVELOPMENT",
+   "teamRef": "Hyderabad",
+   "valuePoints": 8
   },
   {
    "sr": 181,
@@ -1971,7 +2871,12 @@
    "cu": "",
    "base": 30,
    "set": "Marquee",
-   "cat": "M"
+   "cat": "M",
+   "series": 12,
+   "lot": 11,
+   "tier": "DEVELOPMENT",
+   "teamRef": "Lucknow",
+   "valuePoints": 8
   },
   {
    "sr": 182,
@@ -1982,7 +2887,12 @@
    "cu": "",
    "base": 30,
    "set": "Marquee",
-   "cat": "M"
+   "cat": "M",
+   "series": 15,
+   "lot": 7,
+   "tier": "DEVELOPMENT",
+   "teamRef": "Mumbai",
+   "valuePoints": 7
   },
   {
    "sr": 183,
@@ -1993,7 +2903,12 @@
    "cu": "",
    "base": 30,
    "set": "Marquee",
-   "cat": "M"
+   "cat": "M",
+   "series": 2,
+   "lot": 10,
+   "tier": "DEVELOPMENT",
+   "teamRef": "Bengaluru",
+   "valuePoints": 7
   },
   {
    "sr": 184,
@@ -2004,7 +2919,12 @@
    "cu": "",
    "base": 30,
    "set": "Marquee",
-   "cat": "M"
+   "cat": "M",
+   "series": 9,
+   "lot": 7,
+   "tier": "DEVELOPMENT",
+   "teamRef": "Punjab",
+   "valuePoints": 9
   },
   {
    "sr": 185,
@@ -2015,7 +2935,12 @@
    "cu": "",
    "base": 30,
    "set": "Marquee",
-   "cat": "M"
+   "cat": "M",
+   "series": 1,
+   "lot": 3,
+   "tier": "DEVELOPMENT",
+   "teamRef": "Chennai",
+   "valuePoints": 9
   },
   {
    "sr": 186,
@@ -2026,7 +2951,12 @@
    "cu": "",
    "base": 200,
    "set": "Marquee",
-   "cat": "M"
+   "cat": "M",
+   "series": 12,
+   "lot": 10,
+   "tier": "ELITE",
+   "teamRef": "Hyderabad",
+   "valuePoints": 18
   },
   {
    "sr": 187,
@@ -2035,9 +2965,14 @@
    "country": "India",
    "role": "WICKETKEEPER",
    "cu": "",
-   "base": 200,
+   "base": 150,
    "set": "Marquee",
-   "cat": "M"
+   "cat": "M",
+   "series": 6,
+   "lot": 11,
+   "tier": "PREMIUM",
+   "teamRef": "Hyderabad",
+   "valuePoints": 16
   },
   {
    "sr": 188,
@@ -2048,7 +2983,12 @@
    "cu": "",
    "base": 200,
    "set": "Marquee",
-   "cat": "M"
+   "cat": "M",
+   "series": 2,
+   "lot": 11,
+   "tier": "ELITE",
+   "teamRef": "Gujarat",
+   "valuePoints": 18
   },
   {
    "sr": 189,
@@ -2059,7 +2999,12 @@
    "cu": "",
    "base": 200,
    "set": "Marquee",
-   "cat": "M"
+   "cat": "M",
+   "series": 13,
+   "lot": 4,
+   "tier": "ELITE",
+   "teamRef": "Delhi",
+   "valuePoints": 18
   },
   {
    "sr": 190,
@@ -2070,7 +3015,12 @@
    "cu": "",
    "base": 200,
    "set": "Marquee",
-   "cat": "M"
+   "cat": "M",
+   "series": 8,
+   "lot": 1,
+   "tier": "ICON",
+   "teamRef": "Chennai",
+   "valuePoints": 19
   },
   {
    "sr": 191,
@@ -2081,7 +3031,12 @@
    "cu": "",
    "base": 200,
    "set": "Marquee",
-   "cat": "M"
+   "cat": "M",
+   "series": 4,
+   "lot": 13,
+   "tier": "ELITE",
+   "teamRef": "Lucknow",
+   "valuePoints": 18
   },
   {
    "sr": 192,
@@ -2090,9 +3045,14 @@
    "country": "Overseas",
    "role": "WICKETKEEPER",
    "cu": "",
-   "base": 200,
+   "base": 100,
    "set": "Marquee",
-   "cat": "M"
+   "cat": "M",
+   "series": 5,
+   "lot": 13,
+   "tier": "PREMIUM",
+   "teamRef": "Mumbai",
+   "valuePoints": 15
   },
   {
    "sr": 193,
@@ -2103,7 +3063,12 @@
    "cu": "",
    "base": 200,
    "set": "Marquee",
-   "cat": "M"
+   "cat": "M",
+   "series": 3,
+   "lot": 6,
+   "tier": "ELITE",
+   "teamRef": "Lucknow",
+   "valuePoints": 18
   },
   {
    "sr": 194,
@@ -2112,9 +3077,14 @@
    "country": "India",
    "role": "WICKETKEEPER",
    "cu": "",
-   "base": 200,
+   "base": 150,
    "set": "Marquee",
-   "cat": "M"
+   "cat": "M",
+   "series": 11,
+   "lot": 4,
+   "tier": "ELITE",
+   "teamRef": "Chennai",
+   "valuePoints": 17
   },
   {
    "sr": 195,
@@ -2123,9 +3093,14 @@
    "country": "India",
    "role": "WICKETKEEPER",
    "cu": "",
-   "base": 150,
+   "base": 100,
    "set": "Marquee",
-   "cat": "M"
+   "cat": "M",
+   "series": 15,
+   "lot": 14,
+   "tier": "PREMIUM",
+   "teamRef": "Delhi",
+   "valuePoints": 14
   },
   {
    "sr": 196,
@@ -2134,9 +3109,14 @@
    "country": "India",
    "role": "WICKETKEEPER",
    "cu": "",
-   "base": 150,
+   "base": 100,
    "set": "Marquee",
-   "cat": "M"
+   "cat": "M",
+   "series": 9,
+   "lot": 3,
+   "tier": "PREMIUM",
+   "teamRef": "Rajasthan",
+   "valuePoints": 14
   },
   {
    "sr": 197,
@@ -2145,9 +3125,14 @@
    "country": "Overseas",
    "role": "WICKETKEEPER",
    "cu": "",
-   "base": 150,
+   "base": 100,
    "set": "Marquee",
-   "cat": "M"
+   "cat": "M",
+   "series": 6,
+   "lot": 8,
+   "tier": "PREMIUM",
+   "teamRef": "Rajasthan",
+   "valuePoints": 14
   },
   {
    "sr": 198,
@@ -2156,9 +3141,14 @@
    "country": "India",
    "role": "WICKETKEEPER",
    "cu": "",
-   "base": 150,
+   "base": 100,
    "set": "Marquee",
-   "cat": "M"
+   "cat": "M",
+   "series": 7,
+   "lot": 12,
+   "tier": "PREMIUM",
+   "teamRef": "Bengaluru",
+   "valuePoints": 14
   },
   {
    "sr": 199,
@@ -2167,9 +3157,14 @@
    "country": "Overseas",
    "role": "WICKETKEEPER",
    "cu": "",
-   "base": 150,
+   "base": 100,
    "set": "Marquee",
-   "cat": "M"
+   "cat": "M",
+   "series": 10,
+   "lot": 6,
+   "tier": "PREMIUM",
+   "teamRef": "Bengaluru",
+   "valuePoints": 14
   },
   {
    "sr": 200,
@@ -2178,9 +3173,14 @@
    "country": "Overseas",
    "role": "WICKETKEEPER",
    "cu": "",
-   "base": 150,
+   "base": 100,
    "set": "Marquee",
-   "cat": "M"
+   "cat": "M",
+   "series": 8,
+   "lot": 10,
+   "tier": "PREMIUM",
+   "teamRef": "Lucknow",
+   "valuePoints": 15
   },
   {
    "sr": 201,
@@ -2191,7 +3191,12 @@
    "cu": "",
    "base": 150,
    "set": "Marquee",
-   "cat": "M"
+   "cat": "M",
+   "series": 5,
+   "lot": 4,
+   "tier": "PREMIUM",
+   "teamRef": "Bengaluru",
+   "valuePoints": 16
   },
   {
    "sr": 202,
@@ -2200,9 +3205,14 @@
    "country": "India",
    "role": "WICKETKEEPER",
    "cu": "",
-   "base": 150,
+   "base": 75,
    "set": "Marquee",
-   "cat": "M"
+   "cat": "M",
+   "series": 3,
+   "lot": 1,
+   "tier": "VALUE",
+   "teamRef": "Punjab",
+   "valuePoints": 13
   },
   {
    "sr": 203,
@@ -2211,9 +3221,14 @@
    "country": "Overseas",
    "role": "WICKETKEEPER",
    "cu": "",
-   "base": 150,
+   "base": 100,
    "set": "Marquee",
-   "cat": "M"
+   "cat": "M",
+   "series": 1,
+   "lot": 7,
+   "tier": "PREMIUM",
+   "teamRef": "Mumbai",
+   "valuePoints": 14
   },
   {
    "sr": 204,
@@ -2222,9 +3237,14 @@
    "country": "Overseas",
    "role": "WICKETKEEPER",
    "cu": "",
-   "base": 150,
+   "base": 100,
    "set": "Marquee",
-   "cat": "M"
+   "cat": "M",
+   "series": 1,
+   "lot": 12,
+   "tier": "PREMIUM",
+   "teamRef": "Kolkata",
+   "valuePoints": 14
   },
   {
    "sr": 205,
@@ -2233,9 +3253,14 @@
    "country": "Overseas",
    "role": "WICKETKEEPER",
    "cu": "",
-   "base": 150,
+   "base": 100,
    "set": "Marquee",
-   "cat": "M"
+   "cat": "M",
+   "series": 10,
+   "lot": 8,
+   "tier": "PREMIUM",
+   "teamRef": "Gujarat",
+   "valuePoints": 14
   },
   {
    "sr": 206,
@@ -2244,9 +3269,14 @@
    "country": "Overseas",
    "role": "WICKETKEEPER",
    "cu": "",
-   "base": 150,
+   "base": 100,
    "set": "Marquee",
-   "cat": "M"
+   "cat": "M",
+   "series": 14,
+   "lot": 1,
+   "tier": "PREMIUM",
+   "teamRef": "Delhi",
+   "valuePoints": 15
   },
   {
    "sr": 207,
@@ -2255,8 +3285,13 @@
    "country": "Overseas",
    "role": "WICKETKEEPER",
    "cu": "",
-   "base": 100,
-   "set": "Set 3"
+   "base": 75,
+   "set": "Set 3",
+   "series": 11,
+   "lot": 3,
+   "tier": "VALUE",
+   "teamRef": "Lucknow",
+   "valuePoints": 12
   },
   {
    "sr": 208,
@@ -2265,8 +3300,13 @@
    "country": "India",
    "role": "WICKETKEEPER",
    "cu": "",
-   "base": 75,
-   "set": "Set 4"
+   "base": 50,
+   "set": "Set 4",
+   "series": 5,
+   "lot": 14,
+   "tier": "VALUE",
+   "teamRef": "Gujarat",
+   "valuePoints": 10
   },
   {
    "sr": 209,
@@ -2275,9 +3315,14 @@
    "country": "India",
    "role": "WICKETKEEPER",
    "cu": "",
-   "base": 75,
+   "base": 50,
    "set": "Marquee",
-   "cat": "M"
+   "cat": "M",
+   "series": 2,
+   "lot": 9,
+   "tier": "VALUE",
+   "teamRef": "Chennai",
+   "valuePoints": 10
   },
   {
    "sr": 210,
@@ -2286,9 +3331,14 @@
    "country": "India",
    "role": "WICKETKEEPER",
    "cu": "",
-   "base": 50,
+   "base": 30,
    "set": "Marquee",
-   "cat": "M"
+   "cat": "M",
+   "series": 15,
+   "lot": 2,
+   "tier": "DEVELOPMENT",
+   "teamRef": "Lucknow",
+   "valuePoints": 8
   },
   {
    "sr": 211,
@@ -2297,9 +3347,14 @@
    "country": "India",
    "role": "WICKETKEEPER",
    "cu": "",
-   "base": 50,
+   "base": 30,
    "set": "Marquee",
-   "cat": "M"
+   "cat": "M",
+   "series": 12,
+   "lot": 8,
+   "tier": "DEVELOPMENT",
+   "teamRef": "Hyderabad",
+   "valuePoints": 8
   },
   {
    "sr": 212,
@@ -2308,9 +3363,14 @@
    "country": "India",
    "role": "WICKETKEEPER",
    "cu": "",
-   "base": 50,
+   "base": 30,
    "set": "Marquee",
-   "cat": "M"
+   "cat": "M",
+   "series": 13,
+   "lot": 14,
+   "tier": "DEVELOPMENT",
+   "teamRef": "Chennai",
+   "valuePoints": 8
   }
  ],
  "STARS": {
