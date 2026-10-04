@@ -15,7 +15,7 @@
 
   /* ---------- sticky nav ---------- */
   .nav{position:sticky;top:0;z-index:50;backdrop-filter:blur(12px);
-    background:rgba(9,13,26,.72);border-bottom:1px solid var(--line)}
+    background:rgba(10,10,10,.88);border-bottom:1px solid var(--line)}
   .nav .wrap{display:flex;align-items:center;gap:18px;height:66px}
   .nav .links{display:flex;gap:22px;margin-left:14px}
   .nav .links a{color:var(--mut);text-decoration:none;font-size:14px;font-weight:600;transition:color .15s}
@@ -28,8 +28,8 @@
   .hero{position:relative;padding:84px 0 72px;overflow:hidden;text-align:center;
     background:
       radial-gradient(760px 480px at 20% -10%, rgba(245,197,66,.16), transparent 60%),
-      radial-gradient(760px 560px at 88% 20%, rgba(90,210,255,.16), transparent 62%),
-      linear-gradient(180deg,#0d1428,var(--bg2))}
+      radial-gradient(760px 560px at 88% 20%, rgba(245,197,66,.06), transparent 62%),
+      linear-gradient(180deg,#111111,var(--bg2))}
   .hero::after{content:"";position:absolute;inset:0;pointer-events:none;z-index:0;
     background-image:linear-gradient(rgba(255,255,255,.025) 1px,transparent 1px),linear-gradient(90deg,rgba(255,255,255,.025) 1px,transparent 1px);
     background-size:38px 38px;mask-image:radial-gradient(70% 60% at 50% 0%,#000,transparent)}
@@ -40,7 +40,7 @@
   .kicker .dot{width:7px;height:7px;border-radius:50%;background:var(--green);box-shadow:0 0 10px var(--green);animation:pulse 1.6s infinite}
   .htitle{font-family:var(--f-display);font-size:clamp(44px,7.4vw,92px);line-height:.92;letter-spacing:1px;
     text-transform:uppercase;margin:24px auto 0;max-width:14ch;
-    background:linear-gradient(120deg,#fff 30%,var(--gold));-webkit-background-clip:text;background-clip:text;color:transparent}
+    background:linear-gradient(120deg,#f0f0f0 30%,var(--gold));-webkit-background-clip:text;background-clip:text;color:transparent}
   .hsub{color:var(--mut);font-size:clamp(15px,1.8vw,18px);line-height:1.65;max-width:56ch;margin:20px auto 0}
   .hcta{display:flex;gap:12px;justify-content:center;flex-wrap:wrap;margin-top:30px}
   .trust{display:flex;gap:26px;justify-content:center;flex-wrap:wrap;margin-top:42px;
@@ -69,7 +69,7 @@
   .err{color:#ffb3c2;font-size:12.5px;margin-top:10px;min-height:1.05em;font-weight:600}
 
   /* ---------- how it works ---------- */
-  .how{padding:72px 0;background:linear-gradient(180deg,transparent,rgba(9,13,26,.4),transparent)}
+  .how{padding:72px 0;background:linear-gradient(180deg,transparent,rgba(10,10,10,.4),transparent)}
   .steps{display:grid;grid-template-columns:repeat(4,1fr);gap:16px;margin-top:40px}
   @media(max-width:860px){.steps{grid-template-columns:repeat(2,1fr)}}
   @media(max-width:480px){.steps{grid-template-columns:1fr}}

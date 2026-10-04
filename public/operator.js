@@ -97,6 +97,10 @@ async function boot() {
   renderTeamEditor();
   const pool = await Bus.getJSON(Bus.base() + '/pool');
   poolOrder = pool.order.slice();
+  if (poolOrder.length === 0) {
+    poolOrder = catalog.map(p => p.sr);
+    await pushPool();
+  }
   renderCatalog(); renderQueueEditor();
   conn = Bus.connect(onState, on => Bus.connBadge(on), { role:'operator', key:getKey() });
   loadPins();
@@ -256,12 +260,18 @@ function renderCatalog() {
 }
 function rowCatalog(p){
   const c='#'+((cats[catOf(p)]&&cats[catOf(p)].c)||'888');
+  const seriesTag = (p.series != null && p.lot != null)
+    ? `<span class="tag" style="background:#272727;color:#888;font-size:0.75em">S${p.series}·L${p.lot}</span>` : '';
+  const tierTag = p.tier ? `<span class="tag" style="background:#272727;color:#f0f0f0;font-size:0.75em">${esc(p.tier)}</span>` : '';
+  const ptsTag = p.valuePoints != null ? `<span class="dim" style="font-size:0.75em">${p.valuePoints}pt</span>` : '';
   return `<div class="qitem"><span class="tag" style="background:${c}22;color:${c}">${esc((p.role||'?').slice(0,2))}</span>
-    <span class="nm">${esc(p.name)} <span class="dim">· ${esc(p.country||'')} · base ${fmtL(p.base)}</span></span>
+    <span class="nm">${esc(p.name)} ${seriesTag} ${tierTag} <span class="dim">· ${esc(p.country||'')} · ${ptsTag} · base ${fmtL(p.base)}</span></span>
     <button class="btn sm gold" onclick="addToPool(${p.sr})">+ Add</button></div>`;
 }
 window.addToPool=async(sr)=>{ if(!poolOrder.includes(sr)) poolOrder.push(sr); await pushPool(); renderCatalog(); renderQueueEditor(); };
 window.addAllFiltered=async()=>{ filteredCatalog().forEach(p=>{ if(!poolOrder.includes(p.sr)) poolOrder.push(p.sr); }); await pushPool(); renderCatalog(); renderQueueEditor(); Bus.toast('Added to pool','ok'); };
+// Load ALL players sorted strictly by series → lot (the spreadsheet intended order).
+window.loadSeriesOrder=async()=>{ if(poolOrder.length && !confirm('Replace the current queue with the full Series/Lot order?')) return; poolOrder = catalog.slice().sort((a,b)=>{ const sd=(a.series??9999)-(b.series??9999); return sd!==0?sd:(a.lot??9999)-(b.lot??9999); }).map(p=>p.sr); await pushPool(); renderCatalog(); renderQueueEditor(); Bus.toast('Queue set to Series/Lot order','ok'); };
 window.addMarquee=async()=>{ const m=catalog.filter(p=>catOf(p)==='M'); m.forEach(p=>{ if(!poolOrder.includes(p.sr)) poolOrder.unshift(p.sr); }); await pushPool(); renderCatalog(); renderQueueEditor(); };
 window.clearPool=async()=>{ if(!confirm('Clear the entire auction queue?'))return; poolOrder=[]; await pushPool(); renderCatalog(); renderQueueEditor(); };
 window.shufflePool=async()=>{ for(let i=poolOrder.length-1;i>0;i--){const j=Math.floor(Math.random()*(i+1));[poolOrder[i],poolOrder[j]]=[poolOrder[j],poolOrder[i]];} await pushPool(); renderQueueEditor(); };
@@ -270,8 +280,10 @@ window.reversePool=async()=>{ poolOrder.reverse(); await pushPool(); renderQueue
 function renderQueueEditor() {
   const el=$('queueEditor');
   el.innerHTML = poolOrder.slice(0,400).map((sr,i)=>{ const p=bySr[sr]; if(!p)return'';
+    const sTag = (p.series != null && p.lot != null) ? `<span class="tag" style="background:#272727;color:#888;font-size:0.75em">S${p.series}·L${p.lot}</span> ` : '';
+    const tierTag = p.tier ? `<span class="tag" style="background:#272727;color:#f0f0f0;font-size:0.75em">${esc(p.tier)}</span> ` : '';
     return `<div class="qitem"><span class="dim" style="width:28px">${i+1}</span>
-      <span class="nm">${esc(p.name)} <span class="dim">· ${fmtL(p.base)}</span></span>
+      <span class="nm">${sTag}${tierTag}<b>${esc(p.name)}</b> <span class="dim">· ${fmtL(p.base)}</span></span>
       <button class="btn sm ghost" onclick="moveQ(${i},-1)">▲</button>
       <button class="btn sm ghost" onclick="moveQ(${i},1)">▼</button>
       <button class="btn sm red ghost" onclick="removeQ(${i})">✕</button></div>`;
@@ -300,9 +312,9 @@ function renderLive(s) {
   $('curCode').textContent = p?((p.code||'')+(p.cu?(' · '+p.cu):'')):'';
   $('curName').textContent = p?p.name:(s.phase==='complete'?'🏆 Auction complete':'No player on the block');
   $('curMeta').innerHTML = p?[
-    `<span class="tag" style="background:#20305f;color:#bcd">${esc(p.role||'')}</span>`,
-    `<span class="tag" style="background:#20305f;color:#bcd">${esc(p.country||'')}</span>`,
-    `<span class="tag" style="background:#20305f;color:#bcd">Base ${fmtL(p.base)}</span>`
+    `<span class="tag" style="background:#272727;color:#f0f0f0">${esc(p.role||'')}</span>`,
+    `<span class="tag" style="background:#272727;color:#f0f0f0">${esc(p.country||'')}</span>`,
+    `<span class="tag" style="background:#272727;color:#f0f0f0">Base ${fmtL(p.base)}</span>`
   ].join(' '):'';
 
   if (b && b.currentBidL!=null) {
@@ -376,12 +388,15 @@ window.callNext=async()=>{ if(!snap||snap.poolCount===0){Bus.toast('Queue is emp
 // live queue + search-to-next
 function renderQueueLive(s){
   $('poolLeft').textContent=s.counts.pool;
-  $('queueLive').innerHTML = s.queuePreview.map((p,i)=>`<div class="qitem">
-    <span class="dim" style="width:22px">${i+1}</span>
-    <span class="nm">${esc(p.name)} <span class="dim">· ${fmtL(p.base)}</span></span>
-    <button class="btn sm blue" onclick="cmd('setNext',{sr:${p.sr}})">Next</button>
-    <button class="btn sm gold" onclick="cmd('present',{sr:${p.sr}})">Call</button></div>`).join('')
-    || '<div class="dim" style="padding:10px">Queue empty.</div>';
+  $('queueLive').innerHTML = s.queuePreview.map((p,i)=>{
+    const sTag = (p.series != null && p.lot != null) ? `<span class="tag" style="background:#272727;color:#888;font-size:0.75em">S${p.series}·L${p.lot}</span> ` : '';
+    const tierTag = p.tier ? `<span class="tag" style="background:#272727;color:#f0f0f0;font-size:0.75em">${esc(p.tier)}</span> ` : '';
+    return `<div class="qitem">
+      <span class="dim" style="width:22px">${i+1}</span>
+      <span class="nm">${sTag}${tierTag}<b>${esc(p.name)}</b> <span class="dim">· ${fmtL(p.base)}</span></span>
+      <button class="btn sm blue" onclick="cmd('setNext',{sr:${p.sr}})">Next</button>
+      <button class="btn sm gold" onclick="cmd('present',{sr:${p.sr}})">Call</button></div>`;
+  }).join('') || '<div class="dim" style="padding:10px">Queue empty.</div>';
 }
 window.renderLiveSearch=()=>{
   const q=($('liveSearch').value||'').toLowerCase().trim(); if(!q){$('liveSearchRes').innerHTML='';return;}

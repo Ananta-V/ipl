@@ -7,12 +7,12 @@
 <link rel="stylesheet" href="app.css">
 <style>
   .bar{position:sticky;top:0;z-index:20;display:flex;align-items:center;justify-content:space-between;
-    gap:12px;padding:12px 18px;background:rgba(10,14,26,.85);backdrop-filter:blur(8px);border-bottom:1px solid var(--line)}
+    gap:12px;padding:12px 18px;background:rgba(10,10,10,.88);backdrop-filter:blur(8px);border-bottom:1px solid var(--line2)}
   .bar::after{content:"";position:absolute;left:0;right:0;bottom:-1px;height:1px;
-    background:linear-gradient(90deg,transparent,rgba(245,197,66,.5),rgba(90,210,255,.4),transparent)}
+    background:linear-gradient(90deg,transparent,rgba(245,197,66,.45),transparent)}
   .bar .actions{display:flex;align-items:center;gap:9px;flex-wrap:wrap;justify-content:flex-end}
   .roomchip{display:inline-flex;align-items:center;gap:8px;padding:5px 12px;border-radius:999px;
-    background:linear-gradient(135deg,rgba(245,197,66,.14),rgba(224,164,0,.08));border:1px solid rgba(245,197,66,.4)}
+    background:rgba(245,197,66,.1);border:1px solid rgba(245,197,66,.35)}
   .roomchip .lbl{font-size:10px;letter-spacing:1.5px;text-transform:uppercase;color:var(--gold);font-weight:800}
   .roomchip .val{font-family:var(--f-head);font-weight:700;font-size:15px;letter-spacing:3px;color:var(--ink)}
   .main{max-width:1400px;margin:0 auto;padding:16px}
@@ -26,11 +26,10 @@
     border:1px solid var(--line2);border-radius:var(--r-lg);padding:18px 20px;margin-bottom:16px;
     box-shadow:var(--shadow);display:grid;grid-template-columns:auto 1fr;gap:22px;align-items:center}
   @media(max-width:760px){.sharepanel{grid-template-columns:1fr}}
-  .sharecode{display:flex;flex-direction:column;gap:4px;padding-right:22px;border-right:1px solid var(--line)}
-  @media(max-width:760px){.sharecode{border-right:none;border-bottom:1px solid var(--line);padding:0 0 14px}}
+  .sharecode{display:flex;flex-direction:column;gap:4px;padding-right:22px;border-right:1px solid var(--line2)}
+  @media(max-width:760px){.sharecode{border-right:none;border-bottom:1px solid var(--line2);padding:0 0 14px}}
   .sharecode .cap{font-size:10px;letter-spacing:2px;text-transform:uppercase;color:var(--gold);font-weight:800}
-  .sharecode .big{font-family:var(--f-display);font-size:46px;line-height:.95;letter-spacing:5px;
-    background:linear-gradient(120deg,#fff 25%,var(--gold));-webkit-background-clip:text;background-clip:text;color:transparent}
+  .sharecode .big{font-family:var(--f-display);font-size:46px;line-height:.95;letter-spacing:5px;color:var(--gold)}
   .sharecode .sub{font-size:12px;color:var(--mut)}
   .sharelinks{display:flex;flex-direction:column;gap:12px;min-width:0}
   .linkgroup{min-width:0}
@@ -38,24 +37,23 @@
   .linkgroup .lg-name{font-family:var(--f-head);font-size:12px;letter-spacing:1.5px;text-transform:uppercase;color:var(--ink);font-weight:600}
   .linkgroup .lg-hint{font-size:11px;color:var(--dim)}
   .linkrow{display:flex;gap:8px;align-items:center;min-width:0}
-  .linkrow input{font-family:var(--f-body);font-size:13px;background:#0a1224;color:var(--mut);flex:1;min-width:0}
+  .linkrow input{font-family:var(--f-body);font-size:13px;background:var(--bg2);color:var(--ink);border:1px solid var(--line2);flex:1;min-width:0}
   .linkrow .btn{flex:none;white-space:nowrap}
 
   .teamgrid{display:grid;grid-template-columns:repeat(auto-fit,minmax(150px,1fr));gap:10px}
   .tbid{position:relative;text-align:left;padding:12px 12px 12px 15px;border-radius:12px;
     border:1px solid var(--line2);border-left:5px solid var(--tc,var(--line2));
     background:linear-gradient(180deg,var(--panel2),var(--panel));color:var(--ink);transition:transform .1s,box-shadow .12s}
-  .tbid:hover:not(:disabled){transform:translateY(-3px);box-shadow:0 8px 22px rgba(0,0,0,.4)}
+  .tbid:hover:not(:disabled){transform:translateY(-3px);box-shadow:0 8px 22px rgba(0,0,0,.5)}
   .tbid:disabled{opacity:.4}
-  .tbid.lead{border-color:var(--gold);box-shadow:0 0 0 2px var(--gold),0 0 22px rgba(245,197,66,.3)}
+  .tbid.lead{border-color:var(--gold);box-shadow:0 0 0 2px var(--gold),0 0 22px rgba(245,197,66,.25)}
   .tbid .tn{font-family:var(--f-head);font-weight:600;font-size:15px;letter-spacing:.5px;display:flex;align-items:center;gap:7px}
   .tbid .sw{width:12px;height:12px;border-radius:4px}
   .tbid .rm{font-family:var(--f-head);font-size:19px;font-weight:600;margin-top:5px} .tbid .mx{font-size:11px;color:var(--mut);margin-top:2px}
-  .curbox{border-radius:18px;border:1px solid rgba(90,210,255,.28);padding:18px;background:linear-gradient(160deg,#141d3e,#0e1430);
-    box-shadow:0 14px 40px rgba(0,0,0,.45),inset 0 1px 0 rgba(255,255,255,.04)}
+  .curbox{border-radius:18px;border:1px solid var(--line2);padding:18px;background:linear-gradient(160deg,var(--panel2),var(--panel));
+    box-shadow:var(--shadow),inset 0 1px 0 rgba(255,255,255,.04)}
   .curname{font-family:var(--f-head);font-size:32px;font-weight:600;line-height:1;text-transform:uppercase;letter-spacing:.5px}
-  .bidnow{font-family:var(--f-display);font-size:52px;line-height:.9;background:linear-gradient(120deg,#fff 20%,var(--gold));
-    -webkit-background-clip:text;background-clip:text;color:transparent;font-variant-numeric:tabular-nums;
+  .bidnow{font-family:var(--f-display);font-size:52px;line-height:.9;color:var(--gold);font-variant-numeric:tabular-nums;
     filter:drop-shadow(0 0 14px rgba(245,197,66,.3))}
   .teamhead{margin-bottom:4px}
   .teamhead span{font-size:10px;text-transform:uppercase;letter-spacing:1px;color:var(--dim);font-weight:700}
@@ -70,17 +68,17 @@
   .qitem:last-child{border-bottom:none}
   .qitem .nm{flex:1;min-width:0}
   .list{max-height:280px;overflow:auto}
-  .seg{display:inline-flex;border:1px solid var(--line);border-radius:9px;overflow:hidden}
+  .seg{display:inline-flex;border:1px solid var(--line2);border-radius:9px;overflow:hidden}
   .seg button{background:transparent;border:none;color:var(--mut);padding:7px 12px;font-weight:700;font-size:12px}
   .seg button.on{background:var(--panel2);color:var(--ink)}
   .teamrow{display:grid;grid-template-columns:1.5fr .55fr 44px 1fr auto;gap:8px;align-items:center;margin-bottom:6px}
-  .modal{position:fixed;inset:0;background:rgba(4,7,16,.75);display:grid;place-items:center;z-index:60}
+  .modal{position:fixed;inset:0;background:rgba(0,0,0,.82);display:grid;place-items:center;z-index:60}
   .modal .box{width:360px;max-width:92vw}
   .tabs{display:flex;gap:6px;margin-bottom:12px;flex-wrap:wrap}
-  .tabs button{background:transparent;border:1px solid var(--line);color:var(--mut);padding:8px 14px;border-radius:9px;font-weight:700}
-  .tabs button.on{background:var(--panel2);color:var(--ink);border-color:#3a4a80}
-  .kbd{font-size:11px;color:var(--dim);border:1px solid var(--line);border-radius:5px;padding:1px 5px}
-  details{border:1px solid var(--line);border-radius:10px;padding:10px;margin-top:8px}
+  .tabs button{background:transparent;border:1px solid var(--line2);color:var(--mut);padding:8px 14px;border-radius:9px;font-weight:700}
+  .tabs button.on{background:var(--panel2);color:var(--gold);border-color:var(--gold)}
+  .kbd{font-size:11px;color:var(--dim);border:1px solid var(--line2);border-radius:5px;padding:1px 5px}
+  details{border:1px solid var(--line2);border-radius:10px;padding:10px;margin-top:8px}
   summary{cursor:pointer;font-weight:700;color:var(--mut)}
 </style>
 </head>
@@ -181,6 +179,7 @@
         <input id="poolSearch" placeholder="Search players to add…" style="max-width:280px" oninput="renderCatalog()">
         <div class="seg" id="catSeg"></div>
         <button class="btn sm gold" onclick="addAllFiltered()">Add all shown</button>
+        <button class="btn sm" onclick="loadSeriesOrder()">Load Series/Lot Order</button>
         <button class="btn sm" onclick="addMarquee()">Add marquee first</button>
         <button class="btn sm red ghost" onclick="clearPool()">Clear pool</button>
       </div>

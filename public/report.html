@@ -79,7 +79,7 @@ async function load(){
         <button class="btn sm ghost noprint" style="margin-top:6px" onclick="downloadTeamCSV(${t.id})">⬇ Squad CSV</button>
       </div>
     </div>
-    <table><tbody>${t.squad.length?t.squad.map(p=>`<tr><td>${Bus.esc(p.name)}${p.overseas?' <span class="tag" style="background:#20305f;color:#7aa9ff">OS</span>':''}</td>
+    <table><tbody>${t.squad.length?t.squad.map(p=>`<tr><td>${Bus.esc(p.name)}${p.overseas?' <span class="tag" style="background:#272727;color:#f0f0f0">OS</span>':''}</td>
       <td class="mut">${Bus.esc(p.role||'')}</td><td style="text-align:right" class="mono">${Bus.fmtL(p.priceL)}</td></tr>`).join('')
       :'<tr><td class="dim" colspan="3">No players.</td></tr>'}</tbody></table>
   </div>`).join('');
