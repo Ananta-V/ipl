@@ -1,0 +1,9 @@
+node_modules
+.git
+.env
+.agents
+.claude
+test
+scratch
+*.log
+.DS_Store
