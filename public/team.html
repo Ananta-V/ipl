@@ -97,17 +97,21 @@
   .bidbtn:active:not(:disabled){transform:translateY(2px)}
   .bidbtn:disabled{background:#141c34;color:var(--dim);box-shadow:none;cursor:not-allowed;font-size:clamp(15px,4.4vw,19px)}
   .bidbtn.lead{background:linear-gradient(135deg,var(--green),#1f9e52);color:#04240f}
-  /* SOLD splash */
-  .soldsplash{position:fixed;inset:0;z-index:80;display:none;place-items:center;text-align:center;
-    background:radial-gradient(1000px 700px at 50% 40%,rgba(20,30,70,.96),rgba(4,7,16,.99))}
-  .soldsplash.show{display:grid;animation:pop .35s ease}
-  @keyframes pop{from{opacity:0}to{opacity:1}}
-  .soldsplash .inner{display:flex;flex-direction:column;align-items:center;gap:min(1.8vh,14px);padding:22px 16px}
+  /* SOLD splash & Roster Transition */
+  .soldsplash{position:fixed;inset:0;z-index:80;display:flex;flex-direction:column;align-items:center;justify-content:center;text-align:center;
+    background:radial-gradient(1000px 700px at 50% 40%,rgba(20,30,70,.97),rgba(4,7,16,.99));opacity:0;pointer-events:none;transition:opacity .35s ease}
+  .soldsplash.show{opacity:1;pointer-events:auto}
+  .sp-close{position:absolute;top:14px;right:14px;z-index:90;width:34px;height:34px;border-radius:50%;background:rgba(255,255,255,.1);border:1px solid rgba(255,255,255,.2);color:#fff;font-size:15px;display:grid;place-items:center;cursor:pointer}
+  .sp-stage-box{position:relative;width:min(94vw,520px);max-height:88vh;display:flex;align-items:center;justify-content:center}
+  .sp-stg{width:100%;display:flex;flex-direction:column;align-items:center;justify-content:center;opacity:0;transform:translateY(18px) scale(.98);filter:blur(4px);pointer-events:none;transition:all .4s cubic-bezier(.22,1,.36,1);position:absolute;inset:0}
+  .sp-stg.active{position:relative;opacity:1;transform:translateY(0) scale(1);filter:blur(0);pointer-events:auto}
+  .sp-stg.leave-prev{opacity:0;transform:translateY(-18px) scale(.98);filter:blur(4px);pointer-events:none}
+  .sp-stg-sold .inner{display:flex;flex-direction:column;align-items:center;gap:min(1.8vh,14px);padding:14px}
   .soldsplash .stamp{font-family:var(--f-display);font-size:min(15vw,12vh);letter-spacing:4px;line-height:1;color:var(--green);
     text-shadow:0 0 40px currentColor;transform:rotate(-5deg);border:6px solid currentColor;border-radius:16px;padding:.04em .3em;animation:stamp .5s cubic-bezier(.2,1.4,.4,1)}
   .soldsplash .stamp.unsold{color:var(--red)} .soldsplash .stamp.skipped{color:var(--gold)}
   @keyframes stamp{0%{transform:rotate(-5deg) scale(1.6);opacity:0}60%{transform:rotate(-5deg) scale(.94)}100%{transform:rotate(-5deg) scale(1);opacity:1}}
-  .soldsplash #sp-photo{width:min(27vh,210px);height:min(27vh,210px);border-radius:50%;overflow:hidden;display:grid;place-items:center;
+  .soldsplash #sp-photo{width:min(25vh,190px);height:min(25vh,190px);border-radius:50%;overflow:hidden;display:grid;place-items:center;
     box-shadow:0 0 0 4px rgba(11,17,32,.9),0 0 0 6px rgba(245,197,66,.6),0 0 40px rgba(90,210,255,.3)}
   .soldsplash #sp-photo img{width:100%;height:100%;object-fit:cover}
   .soldsplash .sp-name{font-family:var(--f-head);font-weight:700;font-size:min(7vw,6vh);line-height:1;text-transform:uppercase}
@@ -115,6 +119,28 @@
   .soldsplash .sp-team{font-family:var(--f-head);font-weight:600;font-size:min(6vw,5vh);line-height:1;text-transform:uppercase}
   .soldsplash .sp-price{font-family:var(--f-display);font-size:min(11vw,10vh);line-height:1;background:linear-gradient(120deg,#fff 20%,var(--gold));-webkit-background-clip:text;background-clip:text;color:transparent}
   .soldsplash .sp-sub{font-size:min(4vw,3.4vh);color:var(--mut);font-weight:800}
+
+  /* Progress bar on team screen */
+  .sp-pbar-wrap{width:min(280px,80vw);height:4px;background:rgba(255,255,255,.1);border-radius:99px;overflow:hidden;margin-top:8px}
+  .sp-pbar{height:100%;width:0%;background:linear-gradient(90deg,var(--green),var(--gold));transition:width .1s linear}
+
+  /* Team Roster Card on mobile */
+  .sp-rst-card{width:100%;background:linear-gradient(160deg,#141f38,#091020);border:1.5px solid rgba(76,201,240,.3);border-radius:14px;padding:16px 14px;box-shadow:0 14px 40px rgba(0,0,0,.8);display:flex;flex-direction:column;gap:10px}
+  .sp-rst-head{display:flex;align-items:center;justify-content:space-between;gap:10px;padding-bottom:8px;border-bottom:1px solid rgba(255,255,255,.1)}
+  .sp-rst-name{font-family:var(--f-head);font-weight:700;font-size:18px;text-transform:uppercase;color:var(--tcol,var(--gold))}
+  .sp-rst-stats{font-size:12px;color:var(--mut);font-family:var(--f-head);font-weight:600}
+  .sp-rst-stats b{color:var(--gold)}
+  .sp-rst-list{max-height:50vh;overflow-y:auto;display:flex;flex-direction:column;gap:6px;padding-right:2px}
+  .sp-rst-row{display:flex;align-items:center;gap:10px;padding:6px 10px;background:rgba(255,255,255,.03);border:1px solid rgba(255,255,255,.07);border-radius:8px;text-align:left}
+  .sp-rst-row.new{border-color:var(--gold);background:rgba(245,197,66,.08);box-shadow:0 0 12px rgba(245,197,66,.25)}
+  .sp-rst-thumb{width:38px;height:38px;border-radius:6px;overflow:hidden;background:#091224;border:1px solid rgba(255,255,255,.15);flex:none;display:grid;place-items:center}
+  .sp-rst-thumb img{width:100%;height:100%;object-fit:cover}
+  .sp-rst-sil{font-size:16px;opacity:.6}
+  .sp-rst-row .tag-new{font-size:8px;font-family:var(--f-head);font-weight:800;background:var(--gold);color:#000;padding:1px 5px;border-radius:3px}
+  .sp-rst-row .nm{flex:1;font-weight:700;font-size:13px;white-space:nowrap;overflow:hidden;text-overflow:ellipsis}
+  .sp-rst-row .rl{font-size:10px;color:var(--mut);text-transform:uppercase}
+  .sp-rst-row .pr{font-family:var(--f-display);font-size:14px;color:var(--gold)}
+
   .mine-flash{animation:mineglow 1.2s ease}
   @keyframes mineglow{0%,100%{box-shadow:none}30%{box-shadow:0 0 0 2px var(--green),0 0 30px rgba(53,214,122,.5)}}
 </style>
@@ -181,16 +207,38 @@
   </div>
 </div>
 
-<!-- SOLD splash -->
-<div class="soldsplash" id="soldsplash"><div class="inner">
-  <div class="stamp" id="sp-stamp">SOLD</div>
-  <div id="sp-photo"></div>
-  <div class="sp-name" id="sp-name"></div>
-  <div class="sp-to" id="sp-to">sold to</div>
-  <div class="sp-team" id="sp-team"></div>
-  <div class="sp-price" id="sp-price"></div>
-  <div class="sp-sub" id="sp-sub"></div>
-</div></div>
+<!-- SOLD splash & Roster Showcase -->
+<div class="soldsplash" id="soldsplash">
+  <div class="sp-close" onclick="closeTeamSplash()">✕</div>
+  <div class="sp-stage-box">
+    <!-- STAGE 1: SOLD ANNOUNCEMENT -->
+    <div class="sp-stg sp-stg-sold active" id="sp-stg-sold">
+      <div class="inner">
+        <div class="stamp" id="sp-stamp">SOLD</div>
+        <div id="sp-photo"></div>
+        <div class="sp-name" id="sp-name"></div>
+        <div class="sp-to" id="sp-to">sold to</div>
+        <div class="sp-team" id="sp-team"></div>
+        <div class="sp-price" id="sp-price"></div>
+        <div class="sp-sub" id="sp-sub"></div>
+        <div class="sp-pbar-wrap" id="sp-pbar-wrap" style="display:none"><div class="sp-pbar" id="sp-pbar"></div></div>
+      </div>
+    </div>
+    <!-- STAGE 2: TEAM ROSTER -->
+    <div class="sp-stg sp-stg-roster" id="sp-stg-roster">
+      <div class="sp-rst-card" id="sp-rst-card">
+        <div class="sp-rst-head">
+          <div>
+            <div class="sp-rst-name" id="sp-rst-name">TEAM</div>
+            <div style="font-size:10px;letter-spacing:1px;text-transform:uppercase;color:#7fb6d6;font-family:var(--f-head)">Updated Squad</div>
+          </div>
+          <div class="sp-rst-stats" id="sp-rst-stats"></div>
+        </div>
+        <div class="sp-rst-list" id="sp-rst-list"></div>
+      </div>
+    </div>
+  </div>
+</div>
 
 <script src="bus.js"></script>
 <script>
@@ -206,6 +254,26 @@ try{ _themeEl=new Audio('/sfx/ipl_theme.mp3'); _themeEl.preload='auto'; }catch(e
 function unlockAudio(){ if(_audioReady)return; _audioReady=true; if(!_themeEl)return; try{ _themeEl.muted=true; const p=_themeEl.play(); if(p&&p.then)p.then(()=>{_themeEl.pause();_themeEl.currentTime=0;_themeEl.muted=false;}).catch(()=>{_themeEl.muted=false;}); }catch(e){try{_themeEl.muted=false;}catch(_){}}}
 window.addEventListener('pointerdown',unlockAudio,{once:true});
 function playGavel(){ if(!_gavelEl)return; try{ const a=_gavelEl.cloneNode(); a.volume=0.9; a.play().catch(()=>{}); }catch(e){ try{_gavelEl.currentTime=0;_gavelEl.play().catch(()=>{});}catch(_){} } }
+
+let _teamThemeTimer = null;
+function playThemeDuration(seconds = 5) {
+  if (!_themeEl) return;
+  try {
+    clearTimeout(_teamThemeTimer);
+    _themeEl.pause();
+    _themeEl.currentTime = 0;
+    _themeEl.volume = 0.9;
+    const p = _themeEl.play();
+    if (p && p.catch) p.catch(() => {});
+    _teamThemeTimer = setTimeout(() => { stopThemeAudio(); }, seconds * 1000);
+  } catch(e) {}
+}
+function stopThemeAudio() {
+  clearTimeout(_teamThemeTimer);
+  _teamThemeTimer = null;
+  try { if (_themeEl) { _themeEl.pause(); _themeEl.currentTime = 0; } } catch(e) {}
+}
+
 function themeSignal(th){ if(!th||!th.at||th.at===_themeAt)return; _themeAt=th.at; if(!_themeEl)return; try{ if(th.playing){ _themeEl.currentTime=0; _themeEl.volume=0.85; _themeEl.play().catch(()=>{}); } else { _themeEl.pause(); } }catch(e){} }
 
 /* ---------- multi-room session ---------- */
@@ -234,6 +302,9 @@ function render(s){
   const t=s.teams.find(x=>x.teamId===myTeam);
   if(!t){ toJoin(); return; }
   tick(); checkResult(s);            // always: timer countdown + SOLD/UNSOLD splash stay live
+  if(s.bidding && s.bidding.sr && lastSoldSr && s.bidding.sr !== lastSoldSr){
+    closeTeamSplash();
+  }
   themeSignal(s.theme);              // operator-driven IPL theme, broadcast to every screen
   if(s.rev===_lastRev && s.phase===_lastPhase) return; // skip heavy rebuild on unchanged ticks
   _lastRev=s.rev; _lastPhase=s.phase;
@@ -418,29 +489,117 @@ setInterval(()=>{ const ring=$('ring'),num=$('ringnum'); if(!ring)return;
     ring.style.setProperty('--p',dur?(rem/dur*100):0); ring.style.filter=sec<=5?'drop-shadow(0 0 10px #e63946)':'none'; }
   else { num.textContent='—'; ring.style.setProperty('--p',0); ring.style.filter='none'; } },120);
 
-/* ---------- SOLD / UNSOLD / SKIPPED splash ---------- */
-let lastResTs=0, splashT=null;
+/* ---------- SOLD / UNSOLD / SKIPPED splash & Roster Transition ---------- */
+let lastResTs=0, splashT=null, teamStageSwitchT=null, teamProgInt=null, lastSoldSr=null;
+
+function closeTeamSplash(){
+  clearTimeout(splashT); splashT=null;
+  clearTimeout(teamStageSwitchT); teamStageSwitchT=null;
+  clearInterval(teamProgInt); teamProgInt=null;
+  stopThemeAudio();
+  const el=$('soldsplash'); if(el) el.classList.remove('show');
+  setTimeout(()=>{
+    const s1=$('sp-stg-sold'), s2=$('sp-stg-roster');
+    if(s1) s1.className='sp-stg sp-stg-sold active';
+    if(s2) s2.className='sp-stg sp-stg-roster';
+    const pb=$('sp-pbar'); if(pb) pb.style.width='0%';
+  }, 400);
+}
+window.closeTeamSplash = closeTeamSplash;
+
+document.addEventListener('keydown', (e) => {
+  if (e.key === 'Escape') closeTeamSplash();
+});
+
 function checkResult(s){
   const r=s.lastResult; if(!r) return;
   if(r.ts===lastResTs) return;
   const fresh=(Date.now()-r.ts)<8000; lastResTs=r.ts; if(!fresh) return;
-  if(r.kind==='sold'||r.kind==='unsold') playGavel();   // gavel bang on the team screen too
+  if(r.kind==='sold') {
+    playGavel();
+    playThemeDuration(5); // play first 5 seconds of the theme song
+  } else if(r.kind==='unsold') {
+    playGavel();
+  }
+  clearTimeout(splashT); clearTimeout(teamStageSwitchT); clearInterval(teamProgInt);
+
   const col=r.kind==='sold'?'#2ec46a':(r.kind==='unsold'?'#e63946':'#f4c430');
   const stamp=$('sp-stamp'); stamp.className='stamp '+r.kind;
   stamp.textContent=r.kind==='sold'?'SOLD':(r.kind==='unsold'?'UNSOLD':'SKIPPED');
   fillPhoto($('sp-photo'), r.teamColor||col, r.photo);
   $('sp-name').textContent=r.name;
   const sold=r.kind==='sold';
+  if(sold) lastSoldSr=r.sr;
   $('sp-to').style.display=sold?'':'none'; $('sp-team').style.display=sold?'':'none'; $('sp-price').style.display=sold?'':'none';
   $('sp-sub').style.display=sold?'none':'';
+
+  const s1=$('sp-stg-sold'), s2=$('sp-stg-roster');
+  if(s1) s1.className='sp-stg sp-stg-sold active';
+  if(s2) s2.className='sp-stg sp-stg-roster';
+  const pbarWrap=$('sp-pbar-wrap');
+
   if(sold){
     const toMe=r.teamId===myTeam;
     $('sp-to').textContent=toMe?'YOU WON 🎉':'sold to';
     $('sp-team').textContent=r.teamName||''; $('sp-team').style.color=r.teamColor||'#fff';
     $('sp-price').textContent=Bus.fmtL(r.priceL);
-  } else { $('sp-sub').textContent=r.kind==='unsold'?'went unsold':'set aside — will return later'; }
+
+    // Populate team roster card
+    const teamObj=(s.teams||[]).find(t=>Number(t.teamId!=null?t.teamId:t.id)===Number(r.teamId));
+    const tCol=r.teamColor||(teamObj?teamObj.color:'var(--gold)');
+    const rstCard=$('sp-rst-card');
+    if(rstCard) rstCard.style.setProperty('--tcol', tCol);
+    if($('sp-rst-name')) $('sp-rst-name').textContent=r.teamName||(teamObj?teamObj.name:'TEAM');
+    const sq=(teamObj&&teamObj.squad)?teamObj.squad:[];
+    if($('sp-rst-stats')){
+      $('sp-rst-stats').innerHTML=`${sq.length} Players · <b>${Bus.fmtL(teamObj?teamObj.remaining:0)}</b> left`;
+    }
+    const sortedSq=sq.slice().sort((a,b)=>{
+      const aNew=Number(a.sr)===Number(r.sr), bNew=Number(b.sr)===Number(r.sr);
+      if(aNew&&!bNew) return -1; if(!aNew&&bNew) return 1;
+      return (b.priceL||0)-(a.priceL||0);
+    });
+    if($('sp-rst-list')){
+      $('sp-rst-list').innerHTML=sortedSq.map(p=>{
+        const isNew=Number(p.sr)===Number(r.sr);
+        const photoEl = p.photo 
+          ? `<img src="${p.photo}" alt="" onerror="this.parentElement.innerHTML='<span class=\\'sp-rst-sil\\'>👤</span>'" />`
+          : `<span class="sp-rst-sil">👤</span>`;
+        return `<div class="sp-rst-row ${isNew?'new':''}">
+          <div class="sp-rst-thumb">${photoEl}</div>
+          <div style="flex:1;min-width:0">
+            <div style="display:flex;align-items:center;gap:6px">
+              ${isNew?'<span class="tag-new">★ NEW</span>':''}
+              <div class="nm">${Bus.esc(p.name)}</div>
+            </div>
+            <div class="rl">${Bus.esc(p.role||'')} ${p.overseas?'· ✈ OS':''}</div>
+          </div>
+          <div class="pr">${Bus.fmtL(p.priceL)}</div>
+        </div>`;
+      }).join('');
+    }
+
+    if(pbarWrap) pbarWrap.style.display='block';
+    const pb=$('sp-pbar'); if(pb) pb.style.width='0%';
+    const t0=Date.now(), dur=3000;
+    teamProgInt=setInterval(()=>{
+      const elap=Date.now()-t0;
+      if(pb) pb.style.width=Math.min(100,(elap/dur)*100)+'%';
+      if(elap>=dur) clearInterval(teamProgInt);
+    },40);
+
+    teamStageSwitchT=setTimeout(()=>{
+      if(s1) s1.className='sp-stg sp-stg-sold leave-prev';
+      if(s2) s2.className='sp-stg sp-stg-roster active';
+    }, dur);
+
+    splashT=setTimeout(()=>closeTeamSplash(), 11000);
+  } else {
+    if(pbarWrap) pbarWrap.style.display='none';
+    $('sp-sub').textContent=r.kind==='unsold'?'went unsold':'set aside — will return later';
+    splashT=setTimeout(()=>closeTeamSplash(), 3000);
+  }
   const el=$('soldsplash'); el.classList.add('show');
-  clearTimeout(splashT); splashT=setTimeout(()=>el.classList.remove('show'), sold?4200:2600);
 }
 </script>
 </body>
