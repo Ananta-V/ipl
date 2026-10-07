@@ -112,6 +112,7 @@ function initShare() {
   const origin = location.origin;
   const join = `${origin}/join.html?room=${Bus.ROOM}`;
   const pres = `${origin}/presentation.html?room=${Bus.ROOM}`;
+  const teams = `${origin}/teams.html?room=${Bus.ROOM}`;
   const rep  = `${origin}/report.html?room=${Bus.ROOM}`;
   const set = (id,v)=>{ const el=$(id); if(el){ if(el.tagName==='INPUT') el.value=v; else el.textContent=v; } };
   const href = (id,v)=>{ const el=$(id); if(el) el.href=v; };
@@ -119,8 +120,11 @@ function initShare() {
   set('barRoomCode', Bus.ROOM);
   set('joinLink', join);
   set('presLink', pres);
+  set('teamsLink', teams);
   href('viewAuctionBtn', pres);
+  href('teamRostersBtn', teams);
   href('presOpenBtn', pres);
+  href('teamsOpenBtn', teams);
   href('reportBtn', rep);
 }
 window.copyField=async(inputId, btn)=>{
@@ -161,12 +165,8 @@ function onState(s) {
   // Skip the heavy DOM rebuild when nothing actually changed (e.g. per-second
   // timer ticks): rev only advances on real events. The 200ms timer loop still
   // updates the countdown locally.
-  // Auctioneer gavel: bang on a freshly resolved player (sold → gavel, unsold → buzzer).
-  // Guard on the last-result timestamp so it fires once per resolution, and never on the
-  // first snapshot / a reconnect replay of an older result.
   const lr = s.lastResult;
   if (lr && lr.ts && lr.ts !== _lastResultTs) {
-    if (_lastResultTs !== null) { if (lr.kind === 'sold') SFX.gavel(); else if (lr.kind === 'unsold') SFX.unsold(); }
     _lastResultTs = lr.ts;
   }
   if (s.rev === _lastRev && s.phase === _lastPhase) return;
@@ -263,9 +263,8 @@ function rowCatalog(p){
   const seriesTag = (p.series != null && p.lot != null)
     ? `<span class="tag" style="background:#272727;color:#888;font-size:0.75em">S${p.series}·L${p.lot}</span>` : '';
   const tierTag = p.tier ? `<span class="tag" style="background:#272727;color:#f0f0f0;font-size:0.75em">${esc(p.tier)}</span>` : '';
-  const ptsTag = p.valuePoints != null ? `<span class="dim" style="font-size:0.75em">${p.valuePoints}pt</span>` : '';
   return `<div class="qitem"><span class="tag" style="background:${c}22;color:${c}">${esc((p.role||'?').slice(0,2))}</span>
-    <span class="nm">${esc(p.name)} ${seriesTag} ${tierTag} <span class="dim">· ${esc(p.country||'')} · ${ptsTag} · base ${fmtL(p.base)}</span></span>
+    <span class="nm">${esc(p.name)} ${seriesTag} ${tierTag} <span class="dim">· ${esc(p.country||'')} · base ${fmtL(p.base)}</span></span>
     <button class="btn sm gold" onclick="addToPool(${p.sr})">+ Add</button></div>`;
 }
 window.addToPool=async(sr)=>{ if(!poolOrder.includes(sr)) poolOrder.push(sr); await pushPool(); renderCatalog(); renderQueueEditor(); };
@@ -514,18 +513,16 @@ window.presentPick=async(sr)=>{ await cmd('setNext',{sr}); const r=await cmd('pr
 let endsAt=null,dur=0;
 function timerSync(s){ const t=s.timer; if(t&&t.running&&t.remainingMs>0){endsAt=Date.now()+t.remainingMs;dur=t.durationMs;} else if(!(t&&t.running)){endsAt=null;} }
 let wasTimeUp=false, _actx;
-// ── Auctioneer gavel: the real "gavel of justice" clip on SOLD and UNSOLD.
-// ON by default; the operator's own button clicks satisfy the browser autoplay rule.
-let sndOn=true; try{ sndOn = (localStorage.getItem('ipl_op_snd')!=='0'); }catch(e){}
+// Auctioneer gavel: manual sound effects only (autoplay disabled)
+let sndOn=false; try{ sndOn = (localStorage.getItem('ipl_op_snd')==='1'); }catch(e){}
 let _gavel=null;
 try{ _gavel=new Audio('/sfx/gavel.mp3'); _gavel.preload='auto'; }catch(e){}
-// Play the gavel from the start, allowing rapid back-to-back bangs by cloning.
 function playGavel(){
   if(!sndOn||!_gavel)return;
   try{ const a=_gavel.cloneNode(); a.volume=0.9; a.play().catch(()=>{}); }
   catch(e){ try{ _gavel.currentTime=0; _gavel.play().catch(()=>{}); }catch(_){} }
 }
-const SFX={ gavel:playGavel, unsold:playGavel };
+const SFX={ gavel(){}, unsold(){} };
 window.toggleOpSound=()=>{ sndOn=!sndOn; try{ localStorage.setItem('ipl_op_snd', sndOn?'1':'0'); }catch(e){} syncSoundBtn(); if(sndOn) playGavel(); };
 function syncSoundBtn(){ const b=$('opSndBtn'); if(b){ b.textContent=sndOn?'🔨 Gavel on':'🔇 Gavel off'; b.className='btn sm '+(sndOn?'gold':'ghost'); } }
 

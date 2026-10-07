@@ -101,6 +101,7 @@
     <button class="btn sm red ghost" onclick="cmd('complete')">Complete</button>
     <button class="btn sm red ghost" onclick="showRestart()">↻ Restart</button>
     <a class="btn sm ghost" id="viewAuctionBtn" href="#" target="_blank">📺 View Auction</a>
+    <a class="btn sm ghost" id="teamRostersBtn" href="#" target="_blank">👥 Team Rosters</a>
     <a class="btn sm ghost" id="reportBtn" href="#" target="_blank">Report</a>
   </div>
 </div>
@@ -127,6 +128,14 @@
           <input id="presLink" readonly onclick="this.select()">
           <button class="btn sm blue" onclick="copyField('presLink',this)">Copy</button>
           <a class="btn sm ghost" id="presOpenBtn" href="#" target="_blank">Open ↗</a>
+        </div>
+      </div>
+      <div class="linkgroup">
+        <div class="lg-top"><span class="lg-name">Team Rosters link</span><span class="lg-hint">Presentation view of each team's roster & purchases</span></div>
+        <div class="linkrow">
+          <input id="teamsLink" readonly onclick="this.select()">
+          <button class="btn sm blue" onclick="copyField('teamsLink',this)">Copy</button>
+          <a class="btn sm ghost" id="teamsOpenBtn" href="#" target="_blank">Open ↗</a>
         </div>
       </div>
     </div>

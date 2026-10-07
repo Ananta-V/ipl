@@ -1,0 +1,1035 @@
+<!doctype html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width,initial-scale=1">
+<title>IPL Auction 2026 — Team Rosters Presentation</title>
+<link rel="stylesheet" href="app.css">
+<style>
+  /* ===== Broadcast Stadium Presentation Design System ===== */
+  /* STRICT RULES: Solid colors only, NO glassmorphism, NO pills, NO points from CSV, NO audio */
+  :root {
+    --bg-dark: #070c18;
+    --bg-panel: #0d172b;
+    --bg-card: #12203b;
+    --bg-card-hover: #17294c;
+    --border-main: #223766;
+    --border-accent: rgba(76, 201, 240, 0.45);
+    --border-gold: #f5c542;
+    --ink-bright: #ffffff;
+    --ink-sub: #cbd5e1;
+    --ink-mut: #8da2cf;
+    --ink-dim: #546a9e;
+    --gold: #f5c542;
+    --gold-dark: #c99818;
+    --green: #2ecc71;
+    --red: #e74c3c;
+    --blue: #3b82f6;
+  }
+
+  html, body {
+    margin: 0;
+    padding: 0;
+    width: 100%;
+    height: 100%;
+    overflow: hidden;
+    background: var(--bg-dark);
+    color: var(--ink-bright);
+    font-family: var(--f-body);
+    -webkit-font-smoothing: antialiased;
+    user-select: none;
+  }
+
+  /* Presentation Stage Container */
+  .pres-stage {
+    display: flex;
+    flex-direction: column;
+    height: 100vh;
+    width: 100vw;
+    background: var(--bg-dark);
+    box-sizing: border-box;
+  }
+
+  /* ===== HEADER BAR ===== */
+  .pres-header {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    padding: 10px 24px;
+    background: #091224;
+    border-bottom: 2px solid var(--border-main);
+    flex-shrink: 0;
+    height: 84px;
+    box-sizing: border-box;
+  }
+
+  /* Dual Brand Logos: IPL + E-Cell (Matching presentation.html) */
+  .brand-logos {
+    display: flex;
+    align-items: center;
+    gap: 16px;
+  }
+
+  .brand-logo {
+    height: clamp(52px, 6.5vh, 64px);
+    width: auto;
+    object-fit: contain;
+    display: block;
+  }
+
+  .brand-divider {
+    width: 2px;
+    height: 48px;
+    background: linear-gradient(180deg, transparent, rgba(76, 201, 240, 0.5), transparent);
+  }
+
+  /* Center Presentation Title & Info */
+  .header-center {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    text-align: center;
+  }
+
+  .header-title {
+    font-family: var(--f-head);
+    font-size: 20px;
+    font-weight: 700;
+    letter-spacing: 2px;
+    color: var(--gold);
+    text-transform: uppercase;
+    margin: 0;
+  }
+
+  .header-sub {
+    font-size: 12px;
+    color: var(--ink-mut);
+    letter-spacing: 1px;
+    text-transform: uppercase;
+    margin-top: 3px;
+    display: flex;
+    align-items: center;
+    gap: 10px;
+  }
+
+  .room-tag {
+    background: #14223d;
+    border: 1px solid var(--border-main);
+    color: #4cc9f0;
+    padding: 2px 8px;
+    border-radius: 2px;
+    font-family: var(--f-head);
+    font-size: 11px;
+    font-weight: 600;
+  }
+
+  /* Top Right Action & Navigation Controls */
+  .header-actions {
+    display: flex;
+    align-items: center;
+    gap: 10px;
+  }
+
+  .slide-counter {
+    font-family: var(--f-head);
+    font-size: 15px;
+    font-weight: 700;
+    color: var(--ink-sub);
+    letter-spacing: 1px;
+    padding: 6px 14px;
+    background: #12203b;
+    border: 1px solid var(--border-main);
+    border-radius: 4px;
+    min-width: 115px;
+    text-align: center;
+  }
+
+  /* Rectangular solid control buttons (NO PILLS) */
+  .btn-nav {
+    display: inline-flex;
+    align-items: center;
+    justify-content: center;
+    gap: 6px;
+    background: #12203b;
+    color: var(--ink-bright);
+    border: 1px solid var(--border-main);
+    border-radius: 4px;
+    font-family: var(--f-head);
+    font-size: 13px;
+    font-weight: 600;
+    letter-spacing: 0.8px;
+    padding: 8px 16px;
+    cursor: pointer;
+    transition: background 0.15s, border-color 0.15s, color 0.15s;
+    text-decoration: none;
+  }
+
+  .btn-nav:hover {
+    background: #1a2f57;
+    border-color: #4cc9f0;
+    color: #ffffff;
+  }
+
+  .btn-nav.btn-primary {
+    background: #f5c542;
+    color: #070c18;
+    border-color: #d89b00;
+  }
+
+  .btn-nav.btn-primary:hover {
+    background: #ffd666;
+    border-color: #f5c542;
+  }
+
+  /* ===== TEAM HERO / SUMMARY BANNER ===== */
+  .team-hero {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    padding: 14px 28px;
+    background: var(--bg-panel);
+    border-bottom: 2px solid var(--border-main);
+    border-left: 8px solid var(--team-color, var(--gold));
+    flex-shrink: 0;
+    gap: 20px;
+  }
+
+  .team-identity {
+    display: flex;
+    align-items: center;
+    gap: 18px;
+    min-width: 0;
+  }
+
+  .team-logo-box {
+    width: 74px;
+    height: 74px;
+    background: #081020;
+    border: 2px solid var(--team-color, var(--border-main));
+    border-radius: 4px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    overflow: hidden;
+    flex-shrink: 0;
+  }
+
+  .team-logo-img {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+    display: block;
+  }
+
+  .team-logo-fallback {
+    font-family: var(--f-display);
+    font-size: 26px;
+    color: var(--team-color, var(--gold));
+    letter-spacing: 1px;
+  }
+
+  .team-meta {
+    display: flex;
+    flex-direction: column;
+    min-width: 0;
+  }
+
+  .team-name-row {
+    display: flex;
+    align-items: baseline;
+    gap: 12px;
+  }
+
+  .team-name {
+    font-family: var(--f-head);
+    font-size: clamp(24px, 3.2vw, 34px);
+    font-weight: 700;
+    color: #ffffff;
+    letter-spacing: 1px;
+    text-transform: uppercase;
+    margin: 0;
+    line-height: 1.1;
+    white-space: nowrap;
+    overflow: hidden;
+    text-overflow: ellipsis;
+  }
+
+  .team-code-tag {
+    font-family: var(--f-head);
+    font-size: 13px;
+    font-weight: 700;
+    color: #070c18;
+    background: var(--team-color, var(--gold));
+    padding: 2px 8px;
+    border-radius: 2px;
+    letter-spacing: 1px;
+  }
+
+  .team-owner {
+    font-size: 13px;
+    color: var(--ink-mut);
+    margin-top: 4px;
+  }
+
+  /* Rectangular Metrics Strip (NO PILLS) */
+  .team-metrics {
+    display: flex;
+    align-items: center;
+    gap: 12px;
+    flex-wrap: wrap;
+    justify-content: flex-end;
+  }
+
+  .metric-card {
+    background: #111e38;
+    border: 1px solid var(--border-main);
+    border-radius: 4px;
+    padding: 8px 14px;
+    min-width: 110px;
+    display: flex;
+    flex-direction: column;
+    align-items: flex-end;
+  }
+
+  .metric-label {
+    font-family: var(--f-head);
+    font-size: 11px;
+    font-weight: 700;
+    color: var(--ink-mut);
+    letter-spacing: 1px;
+    text-transform: uppercase;
+  }
+
+  .metric-value {
+    font-family: var(--f-display);
+    font-size: 22px;
+    line-height: 1.2;
+    letter-spacing: 0.5px;
+    color: #ffffff;
+    font-variant-numeric: tabular-nums;
+  }
+
+  .metric-value.gold { color: var(--gold); }
+  .metric-value.green { color: var(--green); }
+  .metric-value.red { color: var(--red); }
+
+  /* ===== MAIN ROSTER PRESENTATION STAGE ===== */
+  .roster-stage {
+    flex: 1;
+    overflow-y: auto;
+    padding: 24px 28px;
+    box-sizing: border-box;
+  }
+
+  /* Scrollbar styling */
+  .roster-stage::-webkit-scrollbar {
+    width: 8px;
+  }
+  .roster-stage::-webkit-scrollbar-track {
+    background: #091224;
+  }
+  .roster-stage::-webkit-scrollbar-thumb {
+    background: #1f335c;
+    border-radius: 2px;
+  }
+
+  /* Roster Player Grid */
+  .player-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fill, minmax(290px, 1fr));
+    gap: 16px;
+    width: 100%;
+    margin-bottom: 24px;
+  }
+
+  /* Rectangular Player Presentation Card (Solid background, NO GLASSMORPHISM, NO PILLS) */
+  .player-card {
+    background: var(--bg-card);
+    border: 1px solid var(--border-main);
+    border-radius: 4px;
+    overflow: hidden;
+    display: flex;
+    flex-direction: column;
+    transition: transform 0.15s, border-color 0.15s, background-color 0.15s;
+    position: relative;
+  }
+
+  .player-card:hover {
+    background: var(--bg-card-hover);
+    border-color: rgba(76, 201, 240, 0.6);
+    transform: translateY(-2px);
+  }
+
+  /* Purchase Price Banner at Top of Player Card */
+  .player-price-bar {
+    background: #0d172b;
+    border-bottom: 1px solid var(--border-main);
+    padding: 8px 12px;
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+  }
+
+  .price-caption {
+    font-family: var(--f-head);
+    font-size: 11px;
+    font-weight: 700;
+    color: var(--ink-mut);
+    letter-spacing: 1px;
+    text-transform: uppercase;
+  }
+
+  .price-amount {
+    font-family: var(--f-display);
+    font-size: 20px;
+    color: var(--gold);
+    letter-spacing: 0.5px;
+    font-variant-numeric: tabular-nums;
+  }
+
+  /* Player Card Body: Photo + Info */
+  .player-card-body {
+    display: flex;
+    gap: 14px;
+    padding: 12px;
+    align-items: center;
+  }
+
+  /* Profile Picture (Photo with Silhouette fallback) */
+  .player-photo-box {
+    width: 82px;
+    height: 98px;
+    background: #091224;
+    border: 1px solid var(--border-main);
+    border-radius: 3px;
+    overflow: hidden;
+    flex-shrink: 0;
+    position: relative;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+  }
+
+  .player-photo-img {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+    display: block;
+  }
+
+  .player-sil-svg {
+    width: 80%;
+    height: 80%;
+  }
+
+  /* Player Details */
+  .player-info {
+    flex: 1;
+    min-width: 0;
+    display: flex;
+    flex-direction: column;
+    gap: 6px;
+  }
+
+  .player-name {
+    font-family: var(--f-head);
+    font-size: 18px;
+    font-weight: 700;
+    color: #ffffff;
+    letter-spacing: 0.5px;
+    margin: 0;
+    line-height: 1.15;
+    white-space: nowrap;
+    overflow: hidden;
+    text-overflow: ellipsis;
+  }
+
+  .player-tags {
+    display: flex;
+    align-items: center;
+    gap: 6px;
+    flex-wrap: wrap;
+  }
+
+  /* Rectangular solid tags (NO PILLS) */
+  .tag {
+    font-family: var(--f-head);
+    font-size: 11px;
+    font-weight: 700;
+    letter-spacing: 0.8px;
+    text-transform: uppercase;
+    padding: 2px 6px;
+    border-radius: 2px;
+    border: 1px solid transparent;
+  }
+
+  .tag-role {
+    background: #1e335b;
+    color: #70c4ff;
+    border-color: #2b4982;
+  }
+
+  .tag-overseas {
+    background: #4a1d24;
+    color: #ff8b99;
+    border-color: #7a2835;
+  }
+
+  .tag-domestic {
+    background: #173827;
+    color: #6ee7b7;
+    border-color: #245c3f;
+  }
+
+  .tag-cat {
+    background: #332712;
+    color: #fbd38d;
+    border-color: #5c431b;
+  }
+
+  .player-meta-line {
+    font-size: 12px;
+    color: var(--ink-mut);
+    letter-spacing: 0.3px;
+    display: flex;
+    align-items: center;
+    gap: 8px;
+  }
+
+  /* Empty Roster State */
+  .empty-roster {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    padding: 80px 20px;
+    text-align: center;
+    background: #091224;
+    border: 1px dashed var(--border-main);
+    border-radius: 4px;
+    margin: 20px 0;
+  }
+
+  .empty-icon {
+    font-size: 48px;
+    margin-bottom: 16px;
+    color: var(--ink-dim);
+  }
+
+  .empty-title {
+    font-family: var(--f-head);
+    font-size: 22px;
+    font-weight: 700;
+    color: var(--ink-sub);
+    letter-spacing: 1px;
+    margin: 0 0 8px 0;
+    text-transform: uppercase;
+  }
+
+  .empty-desc {
+    font-size: 14px;
+    color: var(--ink-mut);
+    max-width: 480px;
+    line-height: 1.5;
+    margin: 0;
+  }
+
+  /* ===== BOTTOM FRANCHISE SELECTOR BAR ===== */
+  .pres-footer {
+    display: flex;
+    align-items: center;
+    background: #091224;
+    border-top: 2px solid var(--border-main);
+    height: 70px;
+    flex-shrink: 0;
+    padding: 0 16px;
+    gap: 8px;
+    overflow-x: auto;
+    box-sizing: border-box;
+  }
+
+  .pres-footer::-webkit-scrollbar {
+    height: 4px;
+  }
+  .pres-footer::-webkit-scrollbar-thumb {
+    background: var(--border-main);
+    border-radius: 2px;
+  }
+
+  /* Rectangular Team Selector Tabs (NO PILLS) */
+  .team-tab {
+    display: flex;
+    align-items: center;
+    gap: 8px;
+    background: #111e38;
+    border: 1px solid var(--border-main);
+    border-radius: 4px;
+    padding: 6px 12px;
+    cursor: pointer;
+    white-space: nowrap;
+    flex-shrink: 0;
+    transition: background 0.15s, border-color 0.15s, transform 0.1s;
+    user-select: none;
+  }
+
+  .team-tab:hover {
+    background: #182a4d;
+    border-color: #4cc9f0;
+  }
+
+  .team-tab.active {
+    background: #1b3057;
+    border-color: var(--gold);
+    box-shadow: 0 0 10px rgba(245, 197, 66, 0.25);
+  }
+
+  .tab-logo-box {
+    width: 28px;
+    height: 28px;
+    background: #081020;
+    border-radius: 2px;
+    overflow: hidden;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    flex-shrink: 0;
+  }
+
+  .tab-logo-img {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+    display: block;
+  }
+
+  .tab-logo-dot {
+    width: 10px;
+    height: 10px;
+    border-radius: 2px;
+  }
+
+  .tab-name {
+    font-family: var(--f-head);
+    font-size: 13px;
+    font-weight: 700;
+    letter-spacing: 0.5px;
+    color: #ffffff;
+  }
+
+  .tab-count {
+    font-family: var(--f-display);
+    font-size: 14px;
+    color: var(--gold);
+    background: #091224;
+    padding: 1px 6px;
+    border-radius: 2px;
+    border: 1px solid var(--border-main);
+  }
+
+  /* Keyboard shortcut hint overlay */
+  .kb-hint {
+    font-size: 11px;
+    color: var(--ink-dim);
+    letter-spacing: 0.5px;
+    margin-left: auto;
+    padding-left: 12px;
+    white-space: nowrap;
+  }
+
+  /* No Room Overlay */
+  .noroom-box {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    height: 100vh;
+    width: 100vw;
+    background: var(--bg-dark);
+  }
+  .noroom-card {
+    background: var(--bg-panel);
+    border: 2px solid var(--border-main);
+    border-radius: 4px;
+    padding: 36px 44px;
+    text-align: center;
+    max-width: 460px;
+  }
+  .noroom-card h2 {
+    font-family: var(--f-head);
+    color: var(--gold);
+    margin: 16px 0 8px;
+    text-transform: uppercase;
+  }
+  .noroom-card p {
+    color: var(--ink-sub);
+    font-size: 14px;
+    margin: 0 0 20px;
+  }
+  .noroom-card a {
+    color: var(--gold);
+    font-weight: 700;
+  }
+</style>
+</head>
+<body>
+
+<div class="pres-stage" id="presStage" style="display:none">
+  <!-- ===== TOP HEADER ===== -->
+  <header class="pres-header">
+    <div class="brand-logos">
+      <img src="ipl-logo.png" alt="IPL Logo" class="brand-logo ipl-logo" />
+      <span class="brand-divider"></span>
+      <img src="ecell-logo.png" alt="E-Cell Logo" class="brand-logo ecell-logo" />
+    </div>
+
+    <div class="header-center">
+      <h1 class="header-title">Franchise Squad Presentation</h1>
+      <div class="header-sub">
+        <span>IPL Mock Auction 2026</span>
+        <span class="room-tag" id="roomTag">ROOM: —</span>
+      </div>
+    </div>
+
+    <div class="header-actions">
+      <div class="slide-counter" id="slideCounter">TEAM 1 / 10</div>
+      <button class="btn-nav" id="prevBtn" title="Previous Franchise (←)">◄ PREV</button>
+      <button class="btn-nav" id="nextBtn" title="Next Franchise (→)">NEXT ►</button>
+      <button class="btn-nav" id="fsBtn" title="Toggle Fullscreen (F)">⛶ FULLSCREEN</button>
+      <a class="btn-nav btn-primary" id="liveAuctionBtn" href="#" target="_blank" title="Open Stadium Broadcast View">📺 AUCTION</a>
+    </div>
+  </header>
+
+  <!-- ===== TEAM HERO / SUMMARY ===== -->
+  <section class="team-hero" id="teamHero">
+    <div class="team-identity">
+      <div class="team-logo-box" id="teamLogoBox">
+        <!-- Logo injected by JS -->
+      </div>
+      <div class="team-meta">
+        <div class="team-name-row">
+          <h2 class="team-name" id="teamName">—</h2>
+          <span class="team-code-tag" id="teamCodeTag">—</span>
+        </div>
+        <div class="team-owner" id="teamOwner">—</div>
+      </div>
+    </div>
+
+    <div class="team-metrics" id="teamMetrics">
+      <div class="metric-card">
+        <span class="metric-label">Remaining Purse</span>
+        <span class="metric-value gold" id="mPurseRem">₹0 L</span>
+      </div>
+      <div class="metric-card">
+        <span class="metric-label">Total Spent</span>
+        <span class="metric-value" id="mPurseSpent">₹0 L</span>
+      </div>
+      <div class="metric-card">
+        <span class="metric-label">Squad Size</span>
+        <span class="metric-value" id="mSquadCount">0 / 25</span>
+      </div>
+      <div class="metric-card">
+        <span class="metric-label">Overseas</span>
+        <span class="metric-value" id="mOverseasCount">0 / 8</span>
+      </div>
+      <div class="metric-card">
+        <span class="metric-label">Slots Left</span>
+        <span class="metric-value" id="mSlotsLeft">25</span>
+      </div>
+    </div>
+  </section>
+
+  <!-- ===== ROSTER MAIN STAGE ===== -->
+  <main class="roster-stage" id="rosterStage">
+    <div class="player-grid" id="playerGrid">
+      <!-- Player cards injected by JS -->
+    </div>
+    <div class="empty-roster" id="emptyRoster" style="display:none">
+      <div class="empty-icon">🏏</div>
+      <h3 class="empty-title">No Players Acquired Yet</h3>
+      <p class="empty-desc">Players purchased by this franchise during the auction will be presented here in real-time.</p>
+    </div>
+  </main>
+
+  <!-- ===== BOTTOM FRANCHISE SELECTOR BAR ===== -->
+  <footer class="pres-footer">
+    <div id="teamTabList" style="display:flex;gap:8px;align-items:center;">
+      <!-- Franchise tabs injected by JS -->
+    </div>
+    <div class="kb-hint">Keys: [← / →] Navigate · [1-0] Jump · [F] Fullscreen</div>
+  </footer>
+</div>
+
+<!-- Fallback when no room parameter in URL -->
+<div class="noroom-box" id="noRoomBox" style="display:none">
+  <div class="noroom-card">
+    <div class="brand-logos" style="justify-content:center;margin-bottom:14px">
+      <img src="ipl-logo.png" alt="IPL Logo" style="height:60px" />
+      <span class="brand-divider"></span>
+      <img src="ecell-logo.png" alt="E-Cell Logo" style="height:60px" />
+    </div>
+    <h2>No Auction Selected</h2>
+    <p>Please provide a valid room code in the URL, for example: <code>teams.html?room=CODE</code></p>
+    <a href="index.html" class="btn-nav btn-primary">← Go to Auctions Lobby</a>
+  </div>
+</div>
+
+<script src="bus.js"></script>
+<script>
+'use strict';
+
+/* ===== Official Franchise Logos Mapping ===== */
+const TEAM_LOGOS = {
+  'CSK': '/teamLogo/ChennaiSuperKings.jpeg',
+  'MI': '/teamLogo/MumbaiIndians.jpeg',
+  'RCB': '/teamLogo/RCB.jpeg',
+  'KKR': '/teamLogo/KolkataKnightRiders.jpeg',
+  'RR': '/teamLogo/RajasthanRoyals.jpeg',
+  'DC': '/teamLogo/DelhiCapitals.jpeg',
+  'SRH': '/teamLogo/SRH.jpeg',
+  'GT': '/teamLogo/GujaratTitans.jpeg',
+  'PBKS': '/teamLogo/PunjabKings.jpeg',
+  'LSG': '/teamLogo/LucknowSuperGiants.jpeg',
+};
+
+function getTeamLogo(team) {
+  if (team == null) return null;
+  const s = String((typeof team === 'object' ? (team.short || team.teamShort || team.name || '') : team) || '').trim().toUpperCase();
+  if (TEAM_LOGOS[s]) return TEAM_LOGOS[s];
+  const n = String((typeof team === 'object' ? (team.name || team.teamName || team.short || '') : team) || '').toLowerCase().replace(/[^a-z0-9]/g, '');
+  if (n.includes('chennai') || n.includes('csk') || n.includes('superkings')) return TEAM_LOGOS['CSK'];
+  if (n.includes('mumbai') || n.includes('mi') || n.includes('indians')) return TEAM_LOGOS['MI'];
+  if (n.includes('bangalore') || n.includes('bengaluru') || n.includes('rcb') || n.includes('challengers')) return TEAM_LOGOS['RCB'];
+  if (n.includes('kolkata') || n.includes('kkr') || n.includes('knight')) return TEAM_LOGOS['KKR'];
+  if (n.includes('rajasthan') || n.includes('rr') || n.includes('royals')) return TEAM_LOGOS['RR'];
+  if (n.includes('delhi') || n.includes('dc') || n.includes('capitals')) return TEAM_LOGOS['DC'];
+  if (n.includes('hyderabad') || n.includes('srh') || n.includes('sunrisers')) return TEAM_LOGOS['SRH'];
+  if (n.includes('gujarat') || n.includes('gt') || n.includes('titans')) return TEAM_LOGOS['GT'];
+  if (n.includes('punjab') || n.includes('pbks') || n.includes('kings')) return TEAM_LOGOS['PBKS'];
+  if (n.includes('lucknow') || n.includes('lsg') || n.includes('giants')) return TEAM_LOGOS['LSG'];
+  return null;
+}
+
+// Fallback Silhouette SVG for missing player photos
+let _silUid = 0;
+function makeSilSVG(accentColor) {
+  const c = accentColor || 'rgba(76, 201, 240, 0.7)';
+  const id = ++_silUid;
+  return '<svg viewBox="0 0 100 100" class="player-sil-svg" preserveAspectRatio="xMidYMid meet">'
+    + '<defs>'
+    + '<linearGradient id="silHead_' + id + '" x1="0%" y1="0%" x2="0%" y2="100%">'
+    + '<stop offset="0%" stop-color="#ffffff" stop-opacity="0.9"/>'
+    + '<stop offset="100%" stop-color="' + c + '" stop-opacity="0.45"/>'
+    + '</linearGradient>'
+    + '<linearGradient id="silBody_' + id + '" x1="0%" y1="0%" x2="0%" y2="100%">'
+    + '<stop offset="0%" stop-color="' + c + '" stop-opacity="0.5"/>'
+    + '<stop offset="100%" stop-color="#081020" stop-opacity="0.95"/>'
+    + '</linearGradient>'
+    + '</defs>'
+    + '<path d="M4 100 C6 74 21 57 41 50 L43 43 L57 43 L59 50 C79 57 94 74 96 100 Z" fill="url(#silBody_' + id + ')"/>'
+    + '<path d="M41 50 Q50 63 59 50" fill="none" stroke="' + c + '" stroke-width="2.6" stroke-linecap="round"/>'
+    + '<path d="M50 14 C58.8 14 66 21.2 66 30 C66 37.8 60.5 44.2 53.4 45.6 L53.4 46.5 L46.6 46.5 L46.6 45.6 C39.5 44.2 34 37.8 34 30 C34 21.2 41.2 14 50 14 Z" fill="url(#silHead_' + id + ')"/>'
+    + '</svg>';
+}
+
+/* ===== State & Presentation Logic ===== */
+let latestSnapshot = null;
+let currentTeamIndex = 0;
+
+const $ = id => document.getElementById(id);
+
+// Boot validation
+if (!Bus.ROOM) {
+  $('noRoomBox').style.display = 'flex';
+} else {
+  $('presStage').style.display = 'flex';
+  $('roomTag').textContent = `ROOM: ${Bus.ROOM}`;
+  $('liveAuctionBtn').href = `presentation.html?room=${encodeURIComponent(Bus.ROOM)}`;
+
+  // Connect to SSE stream (Zero audio, no connection badge)
+  Bus.connect(onSnapshot, () => {}, { role: 'screen' });
+}
+
+function onSnapshot(s) {
+  latestSnapshot = s;
+  renderCurrentSlide();
+}
+
+function renderCurrentSlide() {
+  if (!latestSnapshot || !latestSnapshot.teams || latestSnapshot.teams.length === 0) return;
+
+  const teams = latestSnapshot.teams;
+  if (currentTeamIndex >= teams.length) currentTeamIndex = 0;
+  if (currentTeamIndex < 0) currentTeamIndex = teams.length - 1;
+
+  const team = teams[currentTeamIndex];
+  const tColor = team.color || '#f5c542';
+  const squadMax = (latestSnapshot.settings && latestSnapshot.settings.squadMax) || 25;
+  const overseasMax = (latestSnapshot.settings && latestSnapshot.settings.overseasMax) || 8;
+
+  // 1. Header slide index
+  $('slideCounter').textContent = `TEAM ${currentTeamIndex + 1} / ${teams.length}`;
+
+  // 2. Team Hero styling & info
+  $('teamHero').style.setProperty('--team-color', tColor);
+  $('teamName').textContent = team.name || `Team ${team.teamId}`;
+  $('teamCodeTag').textContent = team.short || `T${team.teamId}`;
+  $('teamCodeTag').style.background = tColor;
+  $('teamCodeTag').style.color = '#070c18';
+  $('teamOwner').textContent = team.owner ? `Owner: ${team.owner}` : '';
+
+  // Team Logo
+  const logoUrl = getTeamLogo(team);
+  const logoBox = $('teamLogoBox');
+  logoBox.style.borderColor = tColor;
+  if (logoUrl) {
+    logoBox.innerHTML = `<img src="${logoUrl}" alt="${Bus.esc(team.name)}" class="team-logo-img" />`;
+  } else {
+    logoBox.innerHTML = `<span class="team-logo-fallback">${Bus.esc(team.short || team.name.slice(0, 3))}</span>`;
+  }
+
+  // Key Metrics
+  $('mPurseRem').textContent = Bus.fmtL(team.remaining);
+  $('mPurseSpent').textContent = Bus.fmtL(team.spent);
+  $('mSquadCount').textContent = `${team.count || (team.squad ? team.squad.length : 0)} / ${squadMax}`;
+  $('mOverseasCount').textContent = `${team.overseas || 0} / ${overseasMax}`;
+  $('mSlotsLeft').textContent = Math.max(0, squadMax - (team.count || (team.squad ? team.squad.length : 0)));
+
+  // 3. Squad Roster Cards
+  const squad = (team.squad || []).slice();
+  // Sort players by purchase price descending
+  squad.sort((a, b) => (b.priceL || 0) - (a.priceL || 0));
+
+  const playerGrid = $('playerGrid');
+  const emptyRoster = $('emptyRoster');
+
+  if (squad.length === 0) {
+    playerGrid.innerHTML = '';
+    playerGrid.style.display = 'none';
+    emptyRoster.style.display = 'flex';
+  } else {
+    emptyRoster.style.display = 'none';
+    playerGrid.style.display = 'grid';
+
+    playerGrid.innerHTML = squad.map(p => {
+      const isOS = !!p.overseas;
+      const osTag = isOS ? `<span class="tag tag-overseas">✈ OVERSEAS</span>` : `<span class="tag tag-domestic">DOMESTIC</span>`;
+      const roleTag = p.role ? `<span class="tag tag-role">${Bus.esc(p.role)}</span>` : '';
+      const catTag = p.tier ? `<span class="tag tag-cat">${Bus.esc(p.tier)}</span>` : (p.series != null ? `<span class="tag tag-cat">S${p.series}·L${p.lot||1}</span>` : '');
+      const priceStr = Bus.fmtL(p.priceL || 0);
+
+      // Photo or Silhouette
+      const photoHtml = p.photo
+        ? `<img src="${p.photo}" alt="${Bus.esc(p.name)}" class="player-photo-img" onerror="this.outerHTML=makeSilSVG('${tColor}')" />`
+        : makeSilSVG(tColor);
+
+      // STRICT RULE CHECK: NEVER REVEAL POINTS FROM CSV! No points/rating displayed here.
+      return `
+        <div class="player-card">
+          <div class="player-price-bar">
+            <span class="price-caption">Purchased For</span>
+            <span class="price-amount">${priceStr}</span>
+          </div>
+          <div class="player-card-body">
+            <div class="player-photo-box">
+              ${photoHtml}
+            </div>
+            <div class="player-info">
+              <div class="player-name" title="${Bus.esc(p.name)}">${Bus.esc(p.name)}</div>
+              <div class="player-tags">
+                ${roleTag}
+                ${osTag}
+                ${catTag}
+              </div>
+              <div class="player-meta-line">
+                <span>Lot: ${p.lot != null ? p.lot : '—'}</span>
+                ${p.country && isOS ? `<span>· ${Bus.esc(p.country)}</span>` : ''}
+              </div>
+            </div>
+          </div>
+        </div>
+      `;
+    }).join('');
+  }
+
+  // 4. Bottom Franchise Selector Bar
+  const tabList = $('teamTabList');
+  tabList.innerHTML = teams.map((t, idx) => {
+    const isActive = idx === currentTeamIndex;
+    const tCol = t.color || '#f5c542';
+    const tLogo = getTeamLogo(t);
+    const sqCount = (t.squad ? t.squad.length : (t.count || 0));
+
+    const iconHtml = tLogo
+      ? `<div class="tab-logo-box"><img src="${tLogo}" class="tab-logo-img" alt="" /></div>`
+      : `<div class="tab-logo-dot" style="background:${tCol}"></div>`;
+
+    return `
+      <div class="team-tab ${isActive ? 'active' : ''}" onclick="selectTeam(${idx})" style="${isActive ? `border-color:${tCol};` : ''}">
+        ${iconHtml}
+        <span class="tab-name">${Bus.esc(t.short || t.name)}</span>
+        <span class="tab-count">${sqCount}</span>
+      </div>
+    `;
+  }).join('');
+}
+
+function selectTeam(index) {
+  currentTeamIndex = index;
+  renderCurrentSlide();
+}
+window.selectTeam = selectTeam;
+
+function nextTeam() {
+  if (!latestSnapshot || !latestSnapshot.teams) return;
+  currentTeamIndex = (currentTeamIndex + 1) % latestSnapshot.teams.length;
+  renderCurrentSlide();
+}
+
+function prevTeam() {
+  if (!latestSnapshot || !latestSnapshot.teams) return;
+  currentTeamIndex = (currentTeamIndex - 1 + latestSnapshot.teams.length) % latestSnapshot.teams.length;
+  renderCurrentSlide();
+}
+
+// Navigation button handlers
+$('nextBtn').addEventListener('click', nextTeam);
+$('prevBtn').addEventListener('click', prevTeam);
+
+// Fullscreen toggle handler
+$('fsBtn').addEventListener('click', () => {
+  if (!document.fullscreenElement) {
+    document.documentElement.requestFullscreen().catch(() => {});
+  } else {
+    document.exitFullscreen().catch(() => {});
+  }
+});
+
+// Keyboard navigation
+document.addEventListener('keydown', (e) => {
+  if (e.target.tagName === 'INPUT' || e.target.tagName === 'TEXTAREA') return;
+
+  if (e.key === 'ArrowRight' || e.key === ' ' || e.key === 'PageDown') {
+    e.preventDefault();
+    nextTeam();
+  } else if (e.key === 'ArrowLeft' || e.key === 'PageUp') {
+    e.preventDefault();
+    prevTeam();
+  } else if (e.key.toLowerCase() === 'f') {
+    if (!document.fullscreenElement) {
+      document.documentElement.requestFullscreen().catch(() => {});
+    } else {
+      document.exitFullscreen().catch(() => {});
+    }
+  } else if (e.key >= '1' && e.key <= '9') {
+    const idx = parseInt(e.key, 10) - 1;
+    if (latestSnapshot && latestSnapshot.teams && idx < latestSnapshot.teams.length) {
+      selectTeam(idx);
+    }
+  } else if (e.key === '0') {
+    if (latestSnapshot && latestSnapshot.teams && latestSnapshot.teams.length >= 10) {
+      selectTeam(9);
+    }
+  }
+});
+</script>
+</body>
+</html>

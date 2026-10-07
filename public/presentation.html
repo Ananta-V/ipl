@@ -1649,106 +1649,13 @@ function getTeamLogo(team) {
   return null;
 }
 
-// ===== Sound effects — Web Audio =====
-let AC = null, sndOn = true, master = null;
-function initAudio() {
-  if (AC) return;
-  try {
-    AC = new (window.AudioContext || window.webkitAudioContext)();
-    master = AC.createGain();
-    master.gain.value = 0.55;
-    master.connect(AC.destination);
-  } catch(e) {}
-}
-function unlockAudio() {
-  initAudio();
-  if (AC && AC.state === 'suspended') AC.resume();
-  if (_themeEl) {
-    try {
-      const p = _themeEl.play();
-      if (p) p.then(() => { _themeEl.pause(); _themeEl.currentTime = 0; }).catch(() => {});
-    } catch(e) {}
-  }
-}
-window.addEventListener('click', unlockAudio, { once: true });
-window.addEventListener('keydown', unlockAudio, { once: true });
-window.addEventListener('pointerdown', unlockAudio, { once: true });
-
-function tone(freq, start, dur, type, vol) {
-  if (!AC) return;
-  const t0 = AC.currentTime + start, o = AC.createOscillator(), g = AC.createGain();
-  o.type = type || 'sine';
-  o.frequency.setValueAtTime(freq, t0);
-  g.gain.setValueAtTime(0.0001, t0);
-  g.gain.exponentialRampToValueAtTime(vol || 0.3, t0 + 0.012);
-  g.gain.exponentialRampToValueAtTime(0.0001, t0 + dur);
-  o.connect(g);
-  g.connect(master);
-  o.start(t0);
-  o.stop(t0 + dur + 0.03);
-}
-
-let _gavelEl = null, _themeEl = null;
-try { _gavelEl = new Audio('/sfx/gavel.mp3'); _gavelEl.preload = 'auto'; } catch(e) {}
-try { _themeEl = new Audio('/sfx/ipl_theme.mp3'); _themeEl.preload = 'auto'; } catch(e) {}
-
-function playClip(el, vol) {
-  if (!sndOn || !el) return;
-  try {
-    const a = el.cloneNode();
-    a.volume = vol == null ? 0.9 : vol;
-    a.play().catch(() => {});
-  } catch(e) {}
-}
-
-function gavel() { playClip(_gavelEl, 0.9); }
-
-let _themeTimer = null;
-function playThemeDuration(seconds = 5) {
-  if (!sndOn || !_themeEl) return;
-  try {
-    clearTimeout(_themeTimer);
-    _themeEl.pause();
-    _themeEl.currentTime = 0;
-    _themeEl.volume = 0.95;
-    const p = _themeEl.play();
-    if (p) p.catch(() => {});
-    _themeTimer = setTimeout(() => {
-      stopTheme();
-    }, seconds * 1000);
-  } catch(e) {}
-}
-
-function playTheme() {
-  if (!sndOn || !_themeEl) return;
-  try {
-    clearTimeout(_themeTimer);
-    _themeEl.currentTime = 0;
-    _themeEl.volume = 0.85;
-    _themeEl.play().catch(() => {});
-  } catch(e) {}
-}
-
-function stopTheme() {
-  clearTimeout(_themeTimer);
-  _themeTimer = null;
-  try {
-    if (_themeEl) {
-      _themeEl.pause();
-      _themeEl.currentTime = 0;
-    }
-  } catch(e) {}
-}
-
+// ===== Sound effects strictly disabled per instruction: NEVER auto-play sounds =====
 const SFX = {
-  bid() { if (!sndOn || !AC) return; tone(880, 0, 0.07, 'triangle', 0.22); tone(1320, 0.045, 0.11, 'triangle', 0.18); },
-  sold() {
-    gavel();
-    playThemeDuration(5); // Play first 5 seconds of the theme song on every sold
-  },
-  unsold() { gavel(); },
-  skip() { if (!sndOn || !AC) return; tone(520, 0, 0.07, 'sine', 0.2); tone(390, 0.08, 0.1, 'sine', 0.16); },
-  theme: playTheme
+  bid() {},
+  sold() {},
+  unsold() {},
+  skip() {},
+  theme() {}
 };
 
 window.toggleSound = () => {
@@ -1854,13 +1761,7 @@ function render(s) {
   snap = s;
   const ph = s.phase;
 
-  if (_prevPhase !== null && _prevPhase !== 'complete' && ph === 'complete') SFX.theme();
   _prevPhase = ph;
-
-  if (s.theme && s.theme.at && s.theme.at !== _themeAt) {
-    _themeAt = s.theme.at;
-    if (s.theme.playing) playTheme(); else stopTheme();
-  }
 
   // Update Top-Left Stacked Metrics Counters (SOLD : X / UNSOLD : Y / REMAINING : Z)
   if ($('mSold')) $('mSold').textContent = s.counts ? s.counts.sold : 0;
@@ -1932,10 +1833,6 @@ function render(s) {
     if (bckLabelEl) bckLabelEl.textContent = 'Current Bid';
     $('bidamt').textContent = Bus.fmtL(b.currentBidL);
     
-    // Play SFX only on genuine bid increment
-    if (b.currentBidL !== prevBidAmount && prevBidAmount !== null) {
-      SFX.bid();
-    }
     prevBidAmount = b.currentBidL;
 
     const lt = s.teams.find(t => Number(t.teamId) === Number(b.leadingTeamId) || Number(t.id) === Number(b.leadingTeamId));
@@ -2081,9 +1978,7 @@ function checkResult(s) {
   lastResTs = r.ts;
   if (isInitial && Math.abs(Date.now() - r.ts) > 15000) return;
 
-  try {
-    if (r.kind === 'sold') SFX.sold(); else if (r.kind === 'unsold') SFX.unsold(); else SFX.skip();
-  } catch(e) {}
+
 
   clearTimeout(splashT);
   clearTimeout(stageSwitchT);
